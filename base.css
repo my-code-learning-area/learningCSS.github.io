@@ -1907,7 +1907,7 @@ hr {
     margin-left     : auto;
     margin-right    : auto;
     border-style    : inset;
-    border-width    : 1.5px;
+    border-width    : 1px;
     opacity: 0.9;
     background-color: transparent;
 }
