@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+	</style>
+
+
+	<style>
+		nav {
+			color: #fff;
+			background: rgb(26, 94, 240);
+			display: flex;
+			height: 3.6rem;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 1rem;
+		}
+
+		nav .logo {
+			margin-left: 0.7rem;
+			font-size: 1.5em;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+
+
+
+		nav ul {
+			display: flex;
+			list-style: none;
+		}
+
+		nav ul li {
+			margin: 0 5px;
+		}
+
+		nav ul li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 1.1em;
+			font-weight: 500;
+			letter-spacing: 1px;
+			padding: 0.5rem 0.6rem;
+			border-radius: 5px;
+			transition: all 0.3s;
+		}
+
+		nav ul li a:hover {
+			background: rgb(23, 0, 235);;
+		}
+		
+		nav ul li .active,
+		nav ul li .active:hover {
+			background: rgb(39, 73, 226);
+			font-weight: bold;
+			cursor: default;
+		}
+
+		#menu-checkbox {
+			display: none;
+		}
+
+		nav .menu-btn {
+			font-size: 2.5rem;
+			cursor: pointer;
+			display: none;
+			padding: 0 1rem;
+		}
+		nav .menu-btn:before{
+			content: "=";
+		}
+
+		@media (max-width:650px) {
+			nav .menu-btn {
+				display: block;
+			}
+
+			#menu-checkbox:checked~.menu-btn:before {
+				content: "x";
+			}
+
+			nav ul {
+				position: fixed;
+				display: block;
+				text-align: center;
+				top: 3.6rem;
+				left: -100%;
+				background: rgb(199, 125, 15);
+				height: 100vh;
+				width: 100%;
+				transition: all 0.3s;
+			}
+
+			#menu-checkbox:checked~ul {
+				left: 0%;
+			}
+
+			nav ul li {
+				margin: 2px 4px;
+			}
+
+			nav ul li a {
+				display: block;
+				font-size: 1.15em;
+				padding: 1rem;
+			}
+
+		}
+	</style>
+</head>
+
+<body>
+
+	<header style="position: sticky; top:0px;">
+		<nav>
+			<div class="logo">The Title</div>
+			<label for="menu-checkbox" class="menu-btn"></label>
+			<input type="checkbox" hidden name="menu-checkbox" id="menu-checkbox">
+			<ul>
+				<li>
+					<a href="#" class="active">Home</a>
+				</li>
+				<li>
+					<a href="#" class="">About</a>
+				</li>
+				<li>
+					<a href="#">Services</a>
+				</li>
+				<li>
+					<a href="#">Contact</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<p style="text-align:justify; padding:1rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, quisquam
+		alias omnis, qui ab consectetur nihil
+		aspernatur distinctio enim sint a, obcaecati adipisci aut tenetur! Nostrum itaque, dolores quas consequuntur
+		libero
+		incidunt saepe facilis distinctio tempora, laboriosam magni nam veniam unde natus culpa aut quae laborum dolorum
+		numquam in. Id mollitia neque repellendus odit tempore error blanditiis consequuntur quaerat ullam doloribus
+		maiores
+		dolores unde nisi nam atque possimus, sequi voluptas dicta aut. Fugit, ipsum doloremque ut quidem, dolorem quod
+		vitae deleniti consequatur facilis distinctio earum temporibus aspernatur nisi aut voluptas odit aliquid beatae
+		cupiditate. Eveniet enim omnis blanditiis ullam deserunt commodi quis nam a sint aliquid amet, perferendis atque
+		exercitationem nulla odio, autem quam velit nesciunt placeat quas eos quaerat quisquam? Amet voluptatibus
+		maiores
+		debitis nisi facere praesentium ad beatae, architecto molestiae omnis repudiandae at quo assumenda corporis
+		consequatur, officia ipsum dicta velit culpa! Magni rem veniam, delectus cupiditate iste ex sequi. Ducimus
+		excepturi
+		adipisci, quas ptatibus, v
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum iusto aperiam eligendi dolorem! Tenetur velit
+		itaque qui sapiente ad laborum nihil cum, vel reprehenderit maiores, ipsa incidunt odit tempora dicta. Fugiat
+		quia nostrum cupiditate dolorem, eius sed voluptatem officiis exercitationem ipsa, excepturi impedit mollitia
+		minima illum iure minus possimus aperiam.oluptatem, ullam eos magni
+		libero ut. Magnam ullam expedita quas fugit perspiciatis mollitia fuga quam eius, esse amet delectus? Dicta
+		officia Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio commodi ipsam ratione, minus autem
+		doloremque rem consequuntur similique perspiciatis? Doloremque enim incidunt ratione modi placeat veniam
+		corrupti eaque laboriosam quisquam eligendi accusantium ducimus rem laborum nostrum sed, perferendis eius sint?
+		dolore nostrum molestiae mollitia sapiente, laboriosam saepe repellat similique inventore, tenetur doloremque
+		delectus aspernatur. Sapiente, nisi recusandae. Aut repellendus, ad autem harum veniam at voluptatibus iure
+		consequatur tempore hic eveniet distinctio et accusantium accusamus aperiam aliquid vel doloribus deleniti totam
+		invtatibus, minima, quis maiores vero nostrum animi sed aspernatur quibusdam ea, esse veniam rem.
+	</p>
+</body>
+
+</html>
