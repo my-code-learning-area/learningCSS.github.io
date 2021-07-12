@@ -19,24 +19,28 @@
 	<style>
 		nav {
 			color: #fff;
-			background: rgb(26, 94, 240);
+			background: #1a5ef0;
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
 			height: 3.6rem;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
 			align-items: center;
-			justify-content: space-between;
+			-ms-flex-pack: distribute;
+			justify-content: space-around;
 			padding: 0 1rem;
 		}
 
 		nav .logo {
-			margin-left: 0.7rem;
 			font-size: 1.5em;
 			font-weight: bold;
 			letter-spacing: 1px;
 		}
 
-
-
 		nav ul {
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
 			list-style: none;
 		}
@@ -53,16 +57,17 @@
 			letter-spacing: 1px;
 			padding: 0.5rem 0.6rem;
 			border-radius: 5px;
+			-webkit-transition: all 0.3s;
 			transition: all 0.3s;
 		}
 
 		nav ul li a:hover {
-			background: rgb(23, 0, 235);;
+			background: #2749e2;
 		}
-		
+
 		nav ul li .active,
 		nav ul li .active:hover {
-			background: rgb(39, 73, 226);
+			background: #1700eb;
 			font-weight: bold;
 			cursor: default;
 		}
@@ -77,17 +82,19 @@
 			display: none;
 			padding: 0 1rem;
 		}
-		nav .menu-btn:before{
+
+		nav .menu-btn:before {
 			content: "=";
 		}
 
-		@media (max-width:650px) {
-			nav .menu-btn {
-				display: block;
+		@media (max-width: 650px) {
+			nav {
+				justify-content: space-between;
+				padding-left: 2rem;
 			}
 
-			#menu-checkbox:checked~.menu-btn:before {
-				content: "x";
+			nav .menu-btn {
+				display: block;
 			}
 
 			nav ul {
@@ -96,14 +103,20 @@
 				text-align: center;
 				top: 3.6rem;
 				left: -100%;
-				background: rgb(16, 86, 238);
+				background: #1056ee;
 				height: 100vh;
 				width: 100%;
+				-webkit-transition: all 0.3s;
 				transition: all 0.3s;
 			}
 
 			#menu-checkbox:checked~ul {
 				left: 0%;
+				width: 70%;
+			}
+
+			#menu-checkbox:checked~.menu-btn {
+				font-size: 2rem;
 			}
 
 			nav ul li {
@@ -115,8 +128,9 @@
 				font-size: 1.15em;
 				padding: 1rem;
 			}
-
 		}
+
+		/*# sourceMappingURL=style.css.map */
 	</style>
 </head>
 
