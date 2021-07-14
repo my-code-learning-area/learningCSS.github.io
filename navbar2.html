@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .nav-container {
+            width: 90%;
+            margin: auto;
+        }
+
+        .nav-checkbox {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #fff;
+            padding-left: 10px;
+        }
+
+        .top-nav {
+            outline: none;
+            display: none;
+        }
+
+        .top-nav-label {
+            display: none;
+            color: #fff;
+        }
+
+        .top-content {
+            grid-column: 3;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-content li {
+            display: inline-block;
+            padding-right: 10px;
+        }
+
+        .top-content li a {
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+        }
+
+        .top-content li a::before {
+            content: '';
+            display: block;
+            height: 3px;
+            background: white;
+            position: absolute;
+            bottom: -5px;
+            left: 0px;
+            right: 0%;
+            transform-origin: left;
+            transform: scale(0, 1);
+            transition: ease-in-out 500ms;
+        }
+
+        .top-content li a:hover::before {
+            transform: scale(1, 1);
+        }
+
+        .top-content li a:after {
+            content: '';
+            display: block;
+            height: 3px;
+            background: white;
+            position: absolute;
+            top: -5px;
+            left: 0;
+            right: 0;
+            transform-origin: right;
+            transform: scale(0, 1);
+            transition: ease-in-out 500ms;
+        }
+
+        .top-content li a:hover::after {
+            transform: scale(1, 1);
+        }
+
+        .content {
+            height: 150vh;
+            background: url(https://picsum.photos/1280?image=849);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .top-nav-label::before{
+            content: '≡';
+            /*⁝*/
+        }
+        @media screen and (max-width:1280px) {
+            .nav-container {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:668px) {
+            .top-nav-label {
+                display: grid;
+                cursor: pointer;
+                grid-column: 3;
+                padding-right: 10px;
+            }
+
+            .top-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-column: 1/4;
+                text-align: center;
+                max-height: 0;
+                overflow: hidden;
+                transition: all ease-in-out 0.4s;
+            }
+
+            .nav-checkbox input:checked~.top-content {
+                max-height: 400px;
+            }
+
+            .nav-checkbox input:checked~.top-nav-label::before{
+                content: '⨉';
+            }
+
+            .top-content li {
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <nav class="nav-checkbox">
+                <a href="#" class="logo">Logo</a>
+                <input id="top-nav" class="top-nav" type="checkbox">
+                <label for="top-nav" class="top-nav-label"></label>
+                <ul class="top-content">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Downloads</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="content"></section>
+</body>
+
+</html>
