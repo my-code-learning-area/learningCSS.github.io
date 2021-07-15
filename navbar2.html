@@ -115,10 +115,12 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        .top-nav-label::before{
+
+        .top-nav-label::before {
             content: '≡';
             /*⁝*/
         }
+
         @media screen and (max-width:1280px) {
             .nav-container {
                 width: 100%;
@@ -147,7 +149,7 @@
                 max-height: 400px;
             }
 
-            .nav-checkbox input:checked~.top-nav-label::before{
+            .nav-checkbox input:checked~.top-nav-label::before {
                 content: '⨉';
             }
 
