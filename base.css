@@ -981,6 +981,112 @@
     .navbar_responsive_bg_royal_orange_dark {
         background-color: var(--color_royal_orange_dark) !important;
     }
+
+    /*  */
+
+    .navbar_active_bg_primary {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_secondary {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_warning {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_danger {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_success {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_message {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_info {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_dark {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_light {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_white {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_blue1 {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_blue2 {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_blue3 {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_light {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_dark {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_red {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_red_dark {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_green {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_green_dark {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_blue {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_blue_dark {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_yellow {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_yellow_dark {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_orange {
+        margin-top: 5px !important;
+    }
+
+    .navbar_active_bg_royal_orange_dark {
+        margin-top: 5px !important;
+    }
 }
 
 @media screen and (max-width: 376px) {
