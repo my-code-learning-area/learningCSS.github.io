@@ -79,7 +79,7 @@
     --border_size4: 8px;
     --border_size5: 12px;
 
-    --navbar-height: 4.5rem;
+    --navbar_height: 4.5rem;
 }
 
 * {
@@ -533,19 +533,19 @@
 /* navbar */
 /* =================================================== */
 
-.navbar-sticky {
+.navbar_sticky {
     position: sticky;
     top     : 0;
 }
 
-.navbar-fixed {
+.navbar_fixed {
     position: fixed;
     top     : 0;
     left    : 0;
     right   : 0;
 }
 
-.navbar-base,
+.navbar_base,
 .navbar_lg {
     display        : flex;
     flex-direction : row;
@@ -555,7 +555,7 @@
 
     z-index: 1000;
     width  : 100%;
-    height : var(--navbar-height);
+    height : var(--navbar_height);
 
     background-color: var(--color_dark);
     font-family     : -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -603,49 +603,49 @@
     height: 5.5rem;
 }
 
-.navbar-shadow {
+.navbar_shadow {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-shadow-small {
+.navbar_shadow-small {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-shadow-big,
-.navbar-shadow-large {
+.navbar_shadow-big,
+.navbar_shadow-large {
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-base .navbar-logo {
+.navbar_base .navbar_logo {
     color         : var(--color_white);
     font-size     : 1.5rem;
     letter-spacing: 2px;
     font-weight   : 500;
 }
 
-.navbar_sm .navbar-logo {
+.navbar_sm .navbar_logo {
     font-size: 1.2rem;
 }
 
-.navbar_md .navbar-logo {}
+.navbar_md .navbar_logo {}
 
-.navbar_xl .navbar-logo {
+.navbar_xl .navbar_logo {
     font-size: 1.9rem;
 }
 
-.navbar-base .navbar-logo a {
+.navbar_base .navbar_logo a {
     color          : var(--color_white);
     text-decoration: none;
     transition     : all 0.4s;
     padding        : 0 10px;
 }
 
-.navbar-base .navbar-logo a:hover {
+.navbar_base .navbar_logo a:hover {
     font-weight   : bold;
     letter-spacing: 2.5px;
 }
 
-.navbar-base label {
+.navbar_base label {
     color      : var(--color_white);
     cursor     : pointer;
     font-weight: 500;
@@ -668,11 +668,11 @@
     font-size: 3rem;
 }
 
-.navbar-base label::before {
+.navbar_base label::before {
     content: '≡';
 }
 
-.navbar-base label:hover {
+.navbar_base label:hover {
     font-size: 2.6rem;
 }
 
@@ -686,33 +686,33 @@
     font-size: 3.2rem;
 }
 
-.navbar-base input[type=checkbox] {
+.navbar_base input[type=checkbox] {
     display: none;
 }
 
-.navbar-base .navbar-items {
+.navbar_base .navbar_items {
     display       : flex;
     flex-direction: row;
     height        : 3.3rem;
 }
 
-.navbar_sm .navbar-items {
+.navbar_sm .navbar_items {
     height: 1.5rem;
 }
 
-.navbar_md .navbar-items {
+.navbar_md .navbar_items {
     height: 2.8rem;
 }
 
-.navbar_xl .navbar-items {
+.navbar_xl .navbar_items {
     height: 3.5rem;
 }
 
-.navbar-base .navbar_items_full_height {
+.navbar_base .navbar_items_full_height {
     height: inherit;
 }
 
-.navbar-base .navbar-items .navbar-item {
+.navbar_base .navbar_items .navbar_item {
     position: relative;
 
     display    : flex;
@@ -728,31 +728,31 @@
     transition     : all 0.4s;
 }
 
-.navbar-base .navbar-items .navbar-active {
+.navbar_base .navbar_items .navbar_active {
     background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-.bg_dark .navbar-active {
+.bg_dark .navbar_active {
     background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
-.navbar-active-bold {
+.navbar_active_bold {
     font-weight   : bold !important;
     letter-spacing: 2px !important;
 }
 
-.navbar-base .navbar-items .navbar-item:hover {
+.navbar_base .navbar_items .navbar_item:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.bg_dark .navbar-items .navbar-item:hover {
+.bg_dark .navbar_items .navbar_item:hover {
     background-color: rgba(0, 0, 0, 1);
 
 }
 
 /*animation 1 starts*/
-.navbar-base .navbar_animated1 .navbar-item::after,
-.navbar-base .navbar_animated1-bottom .navbar-item::after {
+.navbar_base .navbar_animated1 .navbar_item::after,
+.navbar_base .navbar_animated1_bottom .navbar_item::after {
     content         : '';
     display         : block;
     height          : 3px;
@@ -768,13 +768,13 @@
 
 }
 
-.navbar-base .navbar_animated1 .navbar-item:hover::after,
-.navbar-base .navbar_animated1-bottom .navbar-item:hover::after {
+.navbar_base .navbar_animated1 .navbar_item:hover::after,
+.navbar_base .navbar_animated1_bottom .navbar_item:hover::after {
     transform: scale(1, 1);
 }
 
-.navbar-base .navbar_animated1 .navbar-item::before,
-.navbar-base .navbar_animated1-top .navbar-item::before {
+.navbar_base .navbar_animated1 .navbar_item::before,
+.navbar_base .navbar_animated1_top .navbar_item::before {
     content         : '';
     display         : block;
     height          : 3px;
@@ -790,30 +790,30 @@
 
 }
 
-.navbar-base .navbar_animated1 .navbar-item:hover::before,
-.navbar-base .navbar_animated1-top .navbar-item:hover::before {
+.navbar_base .navbar_animated1 .navbar_item:hover::before,
+.navbar_base .navbar_animated1_top .navbar_item:hover::before {
     transform: scale(1, 1);
 }
 
 /*animation ends*/
 
 @media screen and (max-width: 768px) {
-    .navbar-base {
+    .navbar_base {
         justify-content: space-between;
-        padding        : 0 2rem 0px var(--navbar-height);
+        padding        : 0 2rem 0px var(--navbar_height);
     }
 
-    .navbar-base label {
+    .navbar_base label {
         display: block;
     }
 
-    .navbar-base .navbar-items {
+    .navbar_base .navbar_items {
         display : block;
         position: fixed;
 
         top  : -100%;
         right: -100%;
-        /*top: var(--navbar-height);
+        /*top: var(--navbar_height);
         right: -100%;*/
         /*top: 100%;
         left : 0;*/
@@ -827,45 +827,45 @@
     }
 
 
-    .navbar-base .navbar-items .navbar-item {
+    .navbar_base .navbar_items .navbar_item {
         justify-content: center;
         text-align     : center;
-        height         : var(--navbar-height);
+        height         : var(--navbar_height);
         border-radius  : 0;
     }
 
-    .navbar_sm .navbar-items .navbar-item {
+    .navbar_sm .navbar_items .navbar_item {
         height: 3rem;
     }
 
-    .navbar_md .navbar-items .navbar-item {
+    .navbar_md .navbar_items .navbar_item {
         height: 3.8rem;
     }
 
-    .navbar_xl .navbar-items .navbar-item {
+    .navbar_xl .navbar_items .navbar_item {
         height: 4.5rem;
     }
 
-    .navbar-base input:checked~.navbar-items {
-        top    : var(--navbar-height);
+    .navbar_base input:checked~.navbar_items {
+        top    : var(--navbar_height);
         right  : 0%;
         /*right: 0;*/
-        /*top  : var(--navbar-height);*/
+        /*top  : var(--navbar_height);*/
     }
 
-    .navbar_sm input:checked~.navbar-items {
+    .navbar_sm input:checked~.navbar_items {
         top: 2rem;
     }
 
-    .navbar_md input:checked~.navbar-items {
+    .navbar_md input:checked~.navbar_items {
         top: 3.7rem;
     }
 
-    .navbar_xl input:checked~.navbar-items {
+    .navbar_xl input:checked~.navbar_items {
         top: 5.5rem;
     }
 
-    .navbar-base input:checked~label::before {
+    .navbar_base input:checked~label::before {
         content   : "⨉";
         font-size : 2rem;
         transition: all ease-in-out 0.5s;
@@ -882,11 +882,11 @@
         line-height: 4.5rem;
     }
 
-    .navbar-base input:checked~.red-cross::before {
+    .navbar_base input:checked~.red-cross::before {
         color: red;
     }
 
-    .navbar-item-active {
+    .navbar_item-active {
         margin-top: 5px;
     }
 
@@ -1103,7 +1103,7 @@
 }
 
 @media screen and (max-width: 376px) {
-    .navbar-base {
+    .navbar_base {
         justify-content: space-between;
         padding        : 0 1rem 0px 2rem;
     }
@@ -1322,157 +1322,157 @@
 /* --------------------------------------------------- */
 .bg_primary,
 .navbar_active_bg_primary,
-.navbar_hover_bg_primary .navbar-item:hover {
+.navbar_hover_bg_primary .navbar_item:hover {
     background-color: var(--color_primary) !important;
 }
 
 .bg_secondary,
 .navbar_active_bg_secondary,
-.navbar_hover_bg_secondary .navbar-item:hover {
+.navbar_hover_bg_secondary .navbar_item:hover {
     background-color: var(--color_secondary) !important;
 }
 
 .bg_warning,
 .navbar_active_bg_warning,
-.navbar_hover_bg_warning .navbar-item:hover {
+.navbar_hover_bg_warning .navbar_item:hover {
     background-color: var(--color_warning) !important;
 }
 
 .bg_danger,
 .navbar_active_bg_danger,
-.navbar_hover_bg_danger .navbar-item:hover {
+.navbar_hover_bg_danger .navbar_item:hover {
     background-color: var(--color_danger) !important;
 }
 
 .bg_success,
 .navbar_active_bg_success,
-.navbar_hover_bg_success .navbar-item:hover {
+.navbar_hover_bg_success .navbar_item:hover {
     background-color: var(--color_success) !important;
 }
 
 .bg_message,
 .navbar_active_bg_message,
-.navbar_hover_bg_message .navbar-item:hover {
+.navbar_hover_bg_message .navbar_item:hover {
     background-color: var(--color_message) !important;
 }
 
 .bg_info,
 .navbar_active_bg_info,
-.navbar_hover_bg_info .navbar-item:hover {
+.navbar_hover_bg_info .navbar_item:hover {
     background-color: var(--color_info) !important;
 }
 
 .bg_dark,
 .navbar_active_bg_dark,
-.navbar_hover_bg_dark .navbar-item:hover {
+.navbar_hover_bg_dark .navbar_item:hover {
     background-color: var(--color_dark) !important;
 }
 
 .bg_light,
 .navbar_active_bg_light,
-.navbar_hover_bg_light .navbar-item:hover {
+.navbar_hover_bg_light .navbar_item:hover {
     background-color: var(--color_light) !important;
 }
 
 .bg_white,
 .navbar_active_bg_white,
-.navbar_hover_bg_white .navbar-item:hover {
+.navbar_hover_bg_white .navbar_item:hover {
     background-color: var(--color_white) !important;
 }
 
 .bg_blue1,
 .navbar_active_bg_blue1,
-.navbar_hover_bg_blue1 .navbar-item:hover {
+.navbar_hover_bg_blue1 .navbar_item:hover {
     background-color: var(--color_blue1) !important;
 }
 
 .bg_blue2,
 .navbar_active_bg_blue2,
-.navbar_hover_bg_blue2 .navbar-item:hover {
+.navbar_hover_bg_blue2 .navbar_item:hover {
     background-color: var(--color_blue2) !important;
 }
 
 .bg_blue3,
 .navbar_active_bg_blue3,
-.navbar_hover_bg_blue3 .navbar-item:hover {
+.navbar_hover_bg_blue3 .navbar_item:hover {
     background-color: var(--color_blue3) !important;
 }
 
 .bg_royal,
 .navbar_active_bg_royal,
-.navbar_hover_bg_royal .navbar-item:hover {
+.navbar_hover_bg_royal .navbar_item:hover {
     background-color: var(--color_royal) !important;
 }
 
 .bg_royal_light,
 .navbar_active_bg_royal_light,
-.navbar_hover_bg_royal_light .navbar-item:hover {
+.navbar_hover_bg_royal_light .navbar_item:hover {
     background-color: var(--color_royal_light) !important;
 }
 
 .bg_royal_dark,
 .navbar_active_bg_royal_dark,
-.navbar_hover_bg_royal_dark .navbar-item:hover {
+.navbar_hover_bg_royal_dark .navbar_item:hover {
     background-color: var(--color_royal_dark) !important;
 }
 
 .bg_royal_red,
 .navbar_active_bg_royal_red,
-.navbar_hover_bg_royal_red .navbar-item:hover {
+.navbar_hover_bg_royal_red .navbar_item:hover {
     background-color: var(--color_royal_red) !important;
 }
 
 .bg_royal_red_dark,
 .navbar_active_bg_royal_red_dark,
-.navbar_hover_bg_royal_red_dark .navbar-item:hover {
+.navbar_hover_bg_royal_red_dark .navbar_item:hover {
     background-color: var(--color_royal_red_dark) !important;
 }
 
 .bg_royal_green,
 .navbar_active_bg_royal_green,
-.navbar_hover_bg_royal_green .navbar-item:hover {
+.navbar_hover_bg_royal_green .navbar_item:hover {
     background-color: var(--color_royal_green) !important;
 }
 
 .bg_royal_green_dark,
 .navbar_active_bg_royal_green_dark,
-.navbar_hover_bg_royal_green_dark .navbar-item:hover {
+.navbar_hover_bg_royal_green_dark .navbar_item:hover {
     background-color: var(--color_royal_green_dark) !important;
 }
 
 .bg_royal_blue,
 .navbar_active_bg_royal_blue,
-.navbar_hover_bg_royal_blue .navbar-item:hover {
+.navbar_hover_bg_royal_blue .navbar_item:hover {
     background-color: var(--color_royal_blue) !important;
 }
 
 .bg_royal_blue_dark,
 .navbar_active_bg_royal_blue_dark,
-.navbar_hover_bg_royal_blue_dark .navbar-item:hover {
+.navbar_hover_bg_royal_blue_dark .navbar_item:hover {
     background-color: var(--color_royal_blue_dark) !important;
 }
 
 .bg_royal_yellow,
 .navbar_active_bg_royal_yellow,
-.navbar_hover_bg_royal_yellow .navbar-item:hover {
+.navbar_hover_bg_royal_yellow .navbar_item:hover {
     background-color: var(--color_royal_yellow) !important;
 }
 
 .bg_royal_yellow_dark,
 .navbar_active_bg_royal_yellow_dark,
-.navbar_hover_bg_royal_yellow_dark .navbar-item:hover {
+.navbar_hover_bg_royal_yellow_dark .navbar_item:hover {
     background-color: var(--color_royal_yellow_dark) !important;
 }
 
 .bg_royal_orange,
 .navbar_active_bg_royal_orange,
-.navbar_hover_bg_royal_orange .navbar-item:hover {
+.navbar_hover_bg_royal_orange .navbar_item:hover {
     background-color: var(--color_royal_orange) !important;
 }
 
 .bg_royal_orange_dark,
 .navbar_active_bg_royal_orange_dark,
-.navbar_hover_bg_royal_orange_dark .navbar-item:hover {
+.navbar_hover_bg_royal_orange_dark .navbar_item:hover {
     background-color: var(--color_royal_orange_dark) !important;
 }
 
