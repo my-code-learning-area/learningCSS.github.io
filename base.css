@@ -545,7 +545,7 @@
     right   : 0;
 }
 
-.navbar,
+.navbar-base,
 .navbar_lg {
     display        : flex;
     flex-direction : row;
@@ -616,7 +616,7 @@
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
-.navbar .navbar-logo {
+.navbar-base .navbar-logo {
     color         : var(--color_white);
     font-size     : 1.5rem;
     letter-spacing: 2px;
@@ -633,19 +633,19 @@
     font-size: 1.9rem;
 }
 
-.navbar .navbar-logo a {
+.navbar-base .navbar-logo a {
     color          : var(--color_white);
     text-decoration: none;
     transition     : all 0.4s;
     padding        : 0 10px;
 }
 
-.navbar .navbar-logo a:hover {
+.navbar-base .navbar-logo a:hover {
     font-weight   : bold;
     letter-spacing: 2.5px;
 }
 
-.navbar label {
+.navbar-base label {
     color      : var(--color_white);
     cursor     : pointer;
     font-weight: 500;
@@ -668,11 +668,11 @@
     font-size: 3rem;
 }
 
-.navbar label::before {
+.navbar-base label::before {
     content: '≡';
 }
 
-.navbar label:hover {
+.navbar-base label:hover {
     font-size: 2.6rem;
 }
 
@@ -686,11 +686,11 @@
     font-size: 3.2rem;
 }
 
-.navbar input[type=checkbox] {
+.navbar-base input[type=checkbox] {
     display: none;
 }
 
-.navbar .navbar-items {
+.navbar-base .navbar-items {
     display       : flex;
     flex-direction: row;
     height        : 3.3rem;
@@ -708,11 +708,11 @@
     height: 3.5rem;
 }
 
-.navbar .navbar_items_full_height {
+.navbar-base .navbar_items_full_height {
     height: inherit;
 }
 
-.navbar .navbar-items .navbar-item {
+.navbar-base .navbar-items .navbar-item {
     position: relative;
 
     display    : flex;
@@ -728,7 +728,7 @@
     transition     : all 0.4s;
 }
 
-.navbar .navbar-items .navbar-active {
+.navbar-base .navbar-items .navbar-active {
     background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
@@ -741,7 +741,7 @@
     letter-spacing: 2px !important;
 }
 
-.navbar .navbar-items .navbar-item:hover {
+.navbar-base .navbar-items .navbar-item:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -751,8 +751,8 @@
 }
 
 /*animation 1 starts*/
-.navbar .navbar_animated1 .navbar-item::after,
-.navbar .navbar_animated1-bottom .navbar-item::after {
+.navbar-base .navbar_animated1 .navbar-item::after,
+.navbar-base .navbar_animated1-bottom .navbar-item::after {
     content         : '';
     display         : block;
     height          : 3px;
@@ -768,13 +768,13 @@
 
 }
 
-.navbar .navbar_animated1 .navbar-item:hover::after,
-.navbar .navbar_animated1-bottom .navbar-item:hover::after {
+.navbar-base .navbar_animated1 .navbar-item:hover::after,
+.navbar-base .navbar_animated1-bottom .navbar-item:hover::after {
     transform: scale(1, 1);
 }
 
-.navbar .navbar_animated1 .navbar-item::before,
-.navbar .navbar_animated1-top .navbar-item::before {
+.navbar-base .navbar_animated1 .navbar-item::before,
+.navbar-base .navbar_animated1-top .navbar-item::before {
     content         : '';
     display         : block;
     height          : 3px;
@@ -790,24 +790,24 @@
 
 }
 
-.navbar .navbar_animated1 .navbar-item:hover::before,
-.navbar .navbar_animated1-top .navbar-item:hover::before {
+.navbar-base .navbar_animated1 .navbar-item:hover::before,
+.navbar-base .navbar_animated1-top .navbar-item:hover::before {
     transform: scale(1, 1);
 }
 
 /*animation ends*/
 
 @media screen and (max-width: 768px) {
-    .navbar {
+    .navbar-base {
         justify-content: space-between;
         padding        : 0 2rem 0px var(--navbar-height);
     }
 
-    .navbar label {
+    .navbar-base label {
         display: block;
     }
 
-    .navbar .navbar-items {
+    .navbar-base .navbar-items {
         display : block;
         position: fixed;
 
@@ -827,7 +827,7 @@
     }
 
 
-    .navbar .navbar-items .navbar-item {
+    .navbar-base .navbar-items .navbar-item {
         justify-content: center;
         text-align     : center;
         height         : var(--navbar-height);
@@ -846,7 +846,7 @@
         height: 4.5rem;
     }
 
-    .navbar input:checked~.navbar-items {
+    .navbar-base input:checked~.navbar-items {
         top    : var(--navbar-height);
         right  : 0%;
         /*right: 0;*/
@@ -865,7 +865,7 @@
         top: 5.5rem;
     }
 
-    .navbar input:checked~label::before {
+    .navbar-base input:checked~label::before {
         content   : "⨉";
         font-size : 2rem;
         transition: all ease-in-out 0.5s;
@@ -882,7 +882,7 @@
         line-height: 4.5rem;
     }
 
-    .navbar input:checked~.red-cross::before {
+    .navbar-base input:checked~.red-cross::before {
         color: red;
     }
 
@@ -1103,7 +1103,7 @@
 }
 
 @media screen and (max-width: 376px) {
-    .navbar {
+    .navbar-base {
         justify-content: space-between;
         padding        : 0 1rem 0px 2rem;
     }
