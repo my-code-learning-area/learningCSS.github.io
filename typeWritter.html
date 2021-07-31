@@ -49,10 +49,14 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container font">
         <div class="type-writer">
             <p class="text_light">Hello, </p>
-            <p class="type blink text_white" data-type="Hrudhay and Vaibhavi[;]Sumit and Shivangi"></p>
+            <p class="type blink text_white" style="text-align: justify;" data-type="
+            World![;]
+            Sumit and Shivangi[;]
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. iusto tempore in temporibus neque itaque, ipsam reiciendis aperiam sit reprehenderit ad, obcaecati laudantium consequatur distinctio!
+            "></p>
         </div>
     </div>
 
@@ -71,7 +75,8 @@
         }
 
         var timeCount = 900;
-        var speed = 55
+        var typeSpeed = 55
+        var eraseSpeed = 15
         var waitTime = 1500
         for (j = 0; j < charStrings.length; j++) {
             let s = charStrings[j]
@@ -80,11 +85,12 @@
                     setTimeout(() => {
                         types[0].innerHTML += s[i]
                         types[0].classList.remove('blink')
-                    }, speed * i);
+                    }, typeSpeed * i);
                 }
-            }, timeCount + speed)
+            }, timeCount + typeSpeed)
 
-            timeCount += s.length * speed + speed;
+            timeCount += s.length * typeSpeed + typeSpeed;
+
             setTimeout(function(){
                 types[0].classList.add("blink");
             }, timeCount)
@@ -96,10 +102,10 @@
                             types[0].innerHTML = types[0].innerHTML.substr(0, types[0].innerHTML.length - 1)
                             types[0].classList.remove('blink')
                         
-                        }, speed * i);
+                        }, eraseSpeed * i);
                     }
                 }, timeCount + waitTime)
-                timeCount += s.length * speed + waitTime;
+                timeCount += s.length * eraseSpeed + waitTime;
             } else {
                 setTimeout(function(){
                     types[0].classList.add("blink");
