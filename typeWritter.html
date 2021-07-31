@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typewritter</title>
+    <link rel="stylesheet" href="base.css">
+    <style>
+        * {
+            margin: 0%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {}
+
+        .type-writer {
+            padding: 2rem 4rem;
+            background: linear-gradient(#6e24cf, rgb(36, 118, 241));
+        }
+
+        .type-writer p {
+            display: inline-block;
+            font-size: 2rem;
+        }
+
+        .type-writer .type::after {
+            content: "|";
+            position: relative;
+            bottom: 2px;
+        }
+        .type-writer .blink::after {
+            animation: cursor-blink 0.8s infinite step-end;
+        }
+
+        @keyframes cursor-blink {
+            from,
+            to {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="type-writer">
+            <p class="text_light">Hello, </p>
+            <p class="type blink text_white" data-type="Hrudhay and Vaibhavi[;]Sumit and Shivangi"></p>
+        </div>
+    </div>
+
+    <script>
+        var types = document.getElementsByClassName("type");
+        var charStrings
+        for (let i = 0; i < types.length; i++) {
+            let type = types[i];
+            let strings = type.getAttribute("data-type").toString().split("[;]")
+
+            charStrings = []
+            for (let ii = 0; ii < strings.length; ii++) {
+                let s = strings[ii].split('');
+                charStrings.push(s)
+            }
+        }
+
+        var timeCount = 900;
+        var speed = 55
+        var waitTime = 1500
+        for (j = 0; j < charStrings.length; j++) {
+            let s = charStrings[j]
+            setTimeout(function () {
+                for (let i = 0; i < s.length; i++) {
+                    setTimeout(() => {
+                        types[0].innerHTML += s[i]
+                        types[0].classList.remove('blink')
+                    }, speed * i);
+                }
+            }, timeCount + speed)
+
+            timeCount += s.length * speed + speed;
+            setTimeout(function(){
+                types[0].classList.add("blink");
+            }, timeCount)
+            if (!(j == charStrings.length - 1)) {
+                setTimeout(() => {
+                    timeCount += waitTime;
+                    for (let i = 0; i < s.length; i++) {
+                        setTimeout(() => {
+                            types[0].innerHTML = types[0].innerHTML.substr(0, types[0].innerHTML.length - 1)
+                            types[0].classList.remove('blink')
+                        
+                        }, speed * i);
+                    }
+                }, timeCount + waitTime)
+                timeCount += s.length * speed + waitTime;
+            } else {
+                setTimeout(function(){
+                    types[0].classList.add("blink");
+                }, timeCount)
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
