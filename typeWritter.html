@@ -14,8 +14,6 @@
             box-sizing: border-box;
         }
 
-        .container {}
-
         .type-writer {
             padding: 2rem 4rem;
             background: linear-gradient(#6e24cf, rgb(36, 118, 241));
@@ -31,11 +29,13 @@
             position: relative;
             bottom: 2px;
         }
+
         .type-writer .blink::after {
             animation: cursor-blink 0.8s infinite step-end;
         }
 
         @keyframes cursor-blink {
+
             from,
             to {
                 opacity: 0;
@@ -91,9 +91,10 @@
 
             timeCount += s.length * typeSpeed + typeSpeed;
 
-            setTimeout(function(){
+            setTimeout(function () {
                 types[0].classList.add("blink");
             }, timeCount)
+
             if (!(j == charStrings.length - 1)) {
                 setTimeout(() => {
                     timeCount += waitTime;
@@ -101,16 +102,15 @@
                         setTimeout(() => {
                             types[0].innerHTML = types[0].innerHTML.substr(0, types[0].innerHTML.length - 1)
                             types[0].classList.remove('blink')
-                        
+
                         }, eraseSpeed * i);
                     }
                 }, timeCount + waitTime)
                 timeCount += s.length * eraseSpeed + waitTime;
-            } else {
-                setTimeout(function(){
-                    types[0].classList.add("blink");
-                }, timeCount)
             }
+            setTimeout(function () {
+                types[0].classList.add("blink");
+            }, timeCount)
 
         }
 
