@@ -15,8 +15,8 @@
         }
 
         .type-writer {
-            padding: 2rem 4rem;
-            background: linear-gradient(#6e24cf, rgb(36, 118, 241));
+            padding: 4rem;
+            background: linear-gradient(#9352e9, rgb(61, 126, 223));
         }
 
         .type-writer p {
@@ -51,12 +51,11 @@
 <body>
     <div class="container font">
         <div class="type-writer">
-            <p class="text_light">Hello, </p>
             <p class="type blink text_white" style="text-align: justify;" data-type="
-            World![;]
-            Sumit and Shivangi[;]
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. iusto tempore in temporibus neque itaque, ipsam reiciendis aperiam sit reprehenderit ad, obcaecati laudantium consequatur distinctio!
-            "></p>
+            World is so beautiful![;]
+            Sumit lives there[;]
+            with his friend hrudhay
+            [;]"></p>
         </div>
     </div>
 
@@ -74,46 +73,46 @@
             }
         }
 
-        var timeCount = 900;
-        var typeSpeed = 55
-        var eraseSpeed = 15
-        var waitTime = 1500
-        for (j = 0; j < charStrings.length; j++) {
-            let s = charStrings[j]
-            setTimeout(function () {
-                for (let i = 0; i < s.length; i++) {
-                    setTimeout(() => {
-                        types[0].innerHTML += s[i]
-                        types[0].classList.remove('blink')
-                    }, typeSpeed * i);
-                }
-            }, timeCount + typeSpeed)
-
-            timeCount += s.length * typeSpeed + typeSpeed;
-
-            setTimeout(function () {
-                types[0].classList.add("blink");
-            }, timeCount)
-
-            if (!(j == charStrings.length - 1)) {
-                setTimeout(() => {
-                    timeCount += waitTime;
+        for (let ii = 0; ii < types.length; ii++) {
+            var timeCount = 900;
+            var typeSpeed = 55
+            var eraseSpeed = 15
+            var waitTime = 1500
+            for (j = 0; j < charStrings.length; j++) {
+                let s = charStrings[j]
+                setTimeout(function () {
                     for (let i = 0; i < s.length; i++) {
                         setTimeout(() => {
-                            types[0].innerHTML = types[0].innerHTML.substr(0, types[0].innerHTML.length - 1)
-                            types[0].classList.remove('blink')
-
-                        }, eraseSpeed * i);
+                            types[ii].innerHTML += s[i]
+                            types[ii].classList.remove('blink')
+                        }, typeSpeed * i);
                     }
-                }, timeCount + waitTime)
-                timeCount += s.length * eraseSpeed + waitTime;
+                }, timeCount + typeSpeed)
+
+                timeCount += s.length * typeSpeed + typeSpeed;
+
+                setTimeout(function () {
+                    types[ii].classList.add("blink");
+                }, timeCount)
+
+                if (!(j == charStrings.length - 1)) {
+                    setTimeout(() => {
+                        timeCount += waitTime;
+                        for (let i = 0; i < s.length; i++) {
+                            setTimeout(() => {
+                                types[ii].innerHTML = types[ii].innerHTML.substr(0, types[ii].innerHTML.length - 1)
+                                types[ii].classList.remove('blink')
+
+                            }, eraseSpeed * i);
+                        }
+                    }, timeCount + waitTime)
+                    timeCount += s.length * eraseSpeed + waitTime;
+                }
+                setTimeout(function () {
+                    types[ii].classList.add("blink");
+                }, timeCount)
             }
-            setTimeout(function () {
-                types[0].classList.add("blink");
-            }, timeCount)
-
         }
-
     </script>
 </body>
 
