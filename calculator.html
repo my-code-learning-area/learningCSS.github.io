@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./base.css">
+    <style>
+        * {
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        .cal {
+            width: 20rem;
+        }
+
+        .cal .cal_display div {
+            text-align: right;
+            padding: 10px !important;
+            font-size: 2rem;
+            color: aliceblue;
+            border-radius: 1rem;
+            height: fixed;
+        }
+
+        .cal .cal_display div:focus {
+            outline: none;
+            border: none;
+        }
+
+        .cal .cal_display .output {
+            padding: 1px;
+            padding: 5px !important;
+            font-size: 1.4rem;
+        }
+
+        .cal .cal_buttons .cal_numbers .cal_button {
+            background-color: rgb(14, 18, 68);
+            color: aliceblue;
+            font-size: 1.4rem;
+            font-weight: 400;
+            border-radius: 20px;
+            border: 1px solid whitesmoke;
+        }
+
+        .cal .cal_buttons .cal_numbers .cal_button:active {
+            border: 1px solid rgb(94, 94, 221);
+            background-color: rgb(3, 3, 150) !important;
+        }
+
+        .cal .cal_buttons .cal_numbers .number {
+            font-weight: bold;
+        }
+
+        .cal .cal_buttons .cal_numbers .symbol {
+            font-weight: 400;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cal bg_blue3 m5 pl3 pb4 pr3 pt4 rounded_lg">
+        <hr>
+        <div class="cal_display border border_light rounded_lg">
+            <div onclick="output(this)" data-operation="output" class="font9 output mr1">&nbsp Incorrect</div>
+            <hr>
+            <hr>
+            <div onclick="input(this)" data-operation="input" class="font9 input" contenteditable="true"
+                id="cal-display">1÷0</div>
+        </div>
+        <hr>
+        <hr>
+        <div class="cal_buttons pt1">
+            <div class="cal_numbers">
+                <div class="row">
+                    <button onclick="history1(this)" data-operation="history" class="cal_button font9 p3 col3"><i class="fas fa-history"></i></button>
+                    <button onclick="accountClear(this)" data-operation="ac" class="cal_button font9 p3 col3">AC</button>
+                    <button onclick="clearDisplay(this)" data-operation="c" class="cal_button font9 p3 col3">C</button>
+                    <button onclick="back(this)" data-operation="back" class="cal_button font9 p3 col3"><i class="fas fa-backspace"></i></button>
+                </div>
+                <div class="row">
+                    <button onclick="display(this)" data-operation="(" class="cal_button font9 p3 symbol col3">(</button>
+                    <button onclick="display(this)" data-operation=")" class="cal_button font9 p3 col3">)</button>
+                    <button onclick="display(this)" data-operation="%" class="cal_button font9 p3 col3">%</button>
+                    <button onclick="display(this)" data-operation="÷" class="cal_button font9 p3 symbol col3"><i class="fas fa-divide"></i></button>
+                </div>
+                <div class="row">
+                    <button onclick="display(this)" data-operation="7" class="cal_button font9 p3 number bg_royal_blue_dark col3">7</button>
+                    <button onclick="display(this)" data-operation="8" class="cal_button font9 p3 number bg_royal_blue_dark col3">8</button>
+                    <button onclick="display(this)" data-operation="9" class="cal_button font9 p3 number bg_royal_blue_dark col3">9</button>
+                    <button onclick="display(this)" data-operation="×" class="cal_button font9 p3 symbol col3"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="row">
+                    <button onclick="display(this)" data-operation="4" class="cal_button font9 p3 number bg_royal_blue_dark col3">4</button>
+                    <button onclick="display(this)" data-operation="5" class="cal_button font9 p3 number bg_royal_blue_dark col3">5</button>
+                    <button onclick="display(this)" data-operation="6" class="cal_button font9 p3 number bg_royal_blue_dark col3">6</button>
+                    <button onclick="display(this)" data-operation="-" class="cal_button font9 p3 symbol col3"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="row">
+                    <button onclick="display(this)" data-operation="1" class="cal_button font9 p3 number bg_royal_blue_dark col3">1</button>
+                    <button onclick="display(this)" data-operation="2" class="cal_button font9 p3 number bg_royal_blue_dark col3">2</button>
+                    <button onclick="display(this)" data-operation="3" class="cal_button font9 p3 number bg_royal_blue_dark col3">3</button>
+                    <button onclick="display(this)" data-operation="+" class="cal_button font9 p3 symbol col3"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="row">
+                    <button onclick="positiveNegativeToggle(this)" data-operation="+-" class="cal_button font9 p3 symbol col3">±</button>
+                    <button onclick="display(this)" data-operation="0" class="cal_button font9 p3 number bg_royal_blue_dark col3">0</button>
+                    <button onclick="display(this)" data-operation="." class="cal_button font9 p3 number col3">.</button>
+                    <button onclick="answer(this)" data-operation="=" class="cal_button font9 p3 number col3 bg_royal_blue"><i class="fas fa-equals"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        "use strict"
+        function getDisplay() {
+            let element = document.getElementById("cal-display");
+            return element;
+        }
+
+        ///////////////////////////
+        function output(element) {
+
+        }
+        function input(element) {
+
+        }
+        ///////////////////////////
+
+        function history1(element) {
+
+        }
+        function accountClear(element) {
+            let display = getDisplay();
+            display.innerText = "0"
+        }
+        function clearDisplay(element) {
+            let display = getDisplay();
+            display.innerText = "0"
+        }
+        function back(element) {
+            let display = getDisplay();
+            display.innerText = display.innerText.substring(0, display.innerText.length - 1)
+            if(display.innerText.length == 0) {
+                display.innerText = '0'
+            }
+        }
+        ///////////////////////////
+        function display(element){
+            let display = getDisplay();
+            let char = element.getAttribute('data-operation')
+            display.innerText = display.innerText + char
+        }
+        ///////////////////////////
+
+        function positiveNegativeToggle(element) {
+
+        }
+
+        function answer(element) {
+
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
