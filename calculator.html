@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Calculator</title>
     <link rel="stylesheet" href="./base.css">
+    <link rel="shortcut icon" href="./media/calculator.svg" type="image/x-icon">
     <style>
         * {
             margin: 0 !important;
@@ -19,6 +20,8 @@
 
         .cal {
             width: 20rem;
+            position: relative;
+            overflow: hidden;
         }
 
         .cal .cal_display div {
@@ -64,16 +67,104 @@
             font-size: 1.4rem;
         }
     </style>
+
+    <style>
+        #toggleHistory {
+            display: none;
+            visibility: hidden;
+        }
+
+        #closeHistoryLabel {
+            display: none;
+        }
+
+        #toggleHistory:checked~#closeHistoryLabel {
+            display: inline-block;
+        }
+
+        #toggleHistory:checked~#closeHistoryLabel::after {
+            content: "⨉";
+            display: block;
+            position: absolute;
+            top: 1rem;
+            right: 1.1rem;
+            z-index: 1;
+            color: whitesmoke;
+            font-weight: bold;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s linear;
+        }
+
+        #showHistory {
+            position: absolute;
+            background-color: rgb(25, 117, 255);
+            top: -100%;
+            bottom: 100%;
+            right: -100%;
+            left: 100%;
+            overflow-y: auto;
+            transition: all 0.3s;
+            color: whitesmoke;
+
+        }
+
+        #showHistory::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #showHistory::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgba(24, 0, 163, 0.726);
+            border-radius: 10px;
+        }
+
+        #showHistory::-webkit-scrollbar-thumb {
+            background: rgb(0, 12, 184);
+            border-radius: 10px;
+        }
+
+        #showHistory::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 12, 184, 0.466);
+        }
+
+
+        #toggleHistory:checked~#showHistory {
+            display: block;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        #showHistory a {
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+            color: whitesmoke;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
+        #showHistory a:hover {
+            background-color: #00000035;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="cal bg_blue3 m6 pl3 pb4 pr3 pt4 rounded_lg">
+    <div class="cal border border_blue3 bg_primary m6 pl3 pb4 pr3 pt4 rounded_lg">
         <hr>
         <div class="cal_display border border_light rounded_lg">
             <div data-operation="output" class="font9 output mr1" id="cal-output-display">&nbsp</div>
             <hr>
             <hr>
-            <div data-operation="input" class="font9 input" contenteditable="true" id="cal-input-display">0</div>
+            <div data-operation="input" onkeypress="return type(event)" class="font9 input" contenteditable="true"
+                id="cal-input-display">0</div>
+        </div>
+        <input type="checkbox" hidden name="closeHistory" id="toggleHistory">
+        <label for="toggleHistory" id="closeHistoryLabel"></label>
+        <div id="showHistory" class="rounded_lg pl5 pr5 pt11 pb11 font17">
+            <hr>
         </div>
         <hr>
         <hr>
@@ -127,8 +218,8 @@
                             class="fas fa-plus"></i></button>
                 </div>
                 <div class="row">
-                    <button onclick="positiveNegativeToggle(this)" data-operation="+-"
-                        class="cal_button font9 p3 symbol col3">±</button>
+                    <button onclick="previous(this)" data-operation="←"
+                        class="cal_button font9 p3 symbol col3">←</button>
                     <button onclick="display(this)" data-operation="0"
                         class="cal_button font9 p3 number bg_royal_blue_dark col3">0</button>
                     <button onclick="display(this)" data-operation="."
@@ -153,8 +244,54 @@
         }
 
         ///////////////////////////
-        function history1(element) {
+        function type(e) {
+            let key;
+            if (window.event) { // IE                  
+                key = e.keyCode;
+            } else if (e.which) { // Netscape/Firefox/Opera                 
+                key = e.which;
+            }
 
+            if (key == 13) { }
+
+            console.log(key)
+        }
+        function history1(element) {
+            document.getElementById('toggleHistory').checked = true;
+
+            let showHistory = document.getElementById("showHistory")
+            showHistory.innerHTML = "<hr>"
+
+            let allHistory = localStorage.allHistory
+            allHistory = allHistory.split('[;]')
+
+            for (let i = allHistory.length - 1; i > 0; i--) {
+                let a = document.createElement('a')
+                let data = JSON.parse(allHistory[i])
+
+                a.classList.add('p4')
+                a.innerText = data.expression.replaceAll('*', '×').replaceAll('/', '÷') + " = " + data.answer
+                a.href = "#"
+                a.setAttribute(
+                    'data-expression',
+                    data.expression.replaceAll('*', '×').replaceAll('/', '÷')
+                )
+                a.onclick = setClickEvent;
+                showHistory.appendChild(a)
+
+                let h = document.createElement('hr')
+                showHistory.appendChild(h)
+            }
+
+        }
+
+        function setClickEvent() {
+            document.getElementById('toggleHistory').checked = false;
+
+            let expression = this.getAttribute('data-expression')
+            getInputDisplay().innerText = expression
+
+            execute()
         }
 
         function accountClear(element) {
@@ -166,6 +303,7 @@
             getInputDisplay().innerText = "0"
             getOutputDisplay().innerHTML = '&nbsp'
 
+            pointer = 1
         }
 
         function back(element) {
@@ -174,24 +312,53 @@
             if (display.innerText.length == 0) {
                 display.innerText = '0'
             }
+            pointer = 1
             execute()
         }
 
-        function positiveNegativeToggle(element) {
+        var pointer = 1;
 
+        function previous(element) {
+            let allHistory = localStorage.allHistory
+            allHistory = allHistory.split('[;]')
+            console.log(pointer, allHistory.length)
+
+            let data = JSON.parse(allHistory[allHistory.length - pointer]).expression
+
+            if (pointer < allHistory.length - 1)
+                pointer++
+
+            getInputDisplay().innerText = data
+            execute()
         }
 
         function answer(element) {
             let answerHistory = execute(true)
-            localStorage.allHistory += "[;]" + JSON.stringify(answerHistory)
+
+            if (!(answerHistory.expression == answerHistory.answer))
+                localStorage.allHistory += "[;]" + JSON.stringify(answerHistory)
+
             let data = localStorage.allHistory
             data = data.split('[;]')
             console.log(JSON.parse(data[1]))
+
+            pointer = 1
         }
 
         function display(element) {
             let display = getInputDisplay();
             let char = element.getAttribute('data-operation')
+
+            if (char == '(') {
+                let symbols = { "÷": "÷", "%": "%", "×": "×", "-": "-", "+": "+" }
+                let c = display.innerText.charAt(display.innerText.length - 1)
+
+                if (!(c in symbols)) {
+                    console.log(c)
+                    console.log(c in symbols)
+                    display.innerText = display.innerText + '×'
+                }
+            }
 
             if (display.innerText != '0')
                 display.innerText = display.innerText + char
@@ -214,7 +381,7 @@
             getOutputDisplay().innerText = answer
             cls ? getInputDisplay().innerText = answer : false
 
-            return {"expression":expression, "answer":answer}
+            return { "expression": expression, "answer": answer }
         }
 
         ///////////////////////////
