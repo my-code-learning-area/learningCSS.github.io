@@ -152,84 +152,86 @@
 </head>
 
 <body>
-    <div class="cal border border_blue3 bg_primary m6 pl3 pb4 pr3 pt4 rounded_lg">
-        <hr>
-        <div class="cal_display border border_light rounded_lg">
-            <div data-operation="output" class="font9 output mr1" id="cal-output-display">&nbsp</div>
+    <center>
+        <div class="cal border border_blue3 bg_primary m6 pl3 pb4 pr3 pt4 rounded_lg">
+            <hr>
+            <div class="cal_display border border_light rounded_lg">
+                <div data-operation="output" class="font9 output mr1" id="cal-output-display">&nbsp</div>
+                <hr>
+                <hr>
+                <div data-operation="input" onkeypress="return type(event)" class="font9 input" contenteditable="true"
+                    id="cal-input-display">0</div>
+            </div>
+            <input type="checkbox" hidden name="closeHistory" id="toggleHistory">
+            <label for="toggleHistory" id="closeHistoryLabel"></label>
+            <div id="showHistory" class="rounded_lg pl5 pr5 pt11 pb11 font17">
+                <hr>
+            </div>
             <hr>
             <hr>
-            <div data-operation="input" onkeypress="return type(event)" class="font9 input" contenteditable="true"
-                id="cal-input-display">0</div>
-        </div>
-        <input type="checkbox" hidden name="closeHistory" id="toggleHistory">
-        <label for="toggleHistory" id="closeHistoryLabel"></label>
-        <div id="showHistory" class="rounded_lg pl5 pr5 pt11 pb11 font17">
-            <hr>
-        </div>
-        <hr>
-        <hr>
-        <div class="cal_buttons pt1">
-            <div class="cal_numbers">
-                <div class="row">
-                    <button onclick="history1(this)" data-operation="history" class="cal_button font9 p3 col3"><i
-                            class="fas fa-history"></i></button>
-                    <button onclick="accountClear(this)" data-operation="ac"
-                        class="cal_button font9 p3 col3">AC</button>
-                    <button onclick="clearDisplay(this)" data-operation="c" class="cal_button font9 p3 col3">C</button>
-                    <button onclick="back(this)" data-operation="back" class="cal_button font9 p3 col3"><i
-                            class="fas fa-backspace"></i></button>
-                </div>
-                <div class="row">
-                    <button onclick="display(this)" data-operation="("
-                        class="cal_button font9 p3 symbol col3">(</button>
-                    <button onclick="display(this)" data-operation=")" class="cal_button font9 p3 col3">)</button>
-                    <button onclick="display(this)" data-operation="%" class="cal_button font9 p3 col3">%</button>
-                    <button onclick="display(this)" data-operation="÷" class="cal_button font9 p3 symbol col3"><i
-                            class="fas fa-divide"></i></button>
-                </div>
-                <div class="row">
-                    <button onclick="display(this)" data-operation="7"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">7</button>
-                    <button onclick="display(this)" data-operation="8"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">8</button>
-                    <button onclick="display(this)" data-operation="9"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">9</button>
-                    <button onclick="display(this)" data-operation="×" class="cal_button font9 p3 symbol col3"><i
-                            class="fas fa-times"></i></button>
-                </div>
-                <div class="row">
-                    <button onclick="display(this)" data-operation="4"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">4</button>
-                    <button onclick="display(this)" data-operation="5"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">5</button>
-                    <button onclick="display(this)" data-operation="6"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">6</button>
-                    <button onclick="display(this)" data-operation="-" class="cal_button font9 p3 symbol col3"><i
-                            class="fas fa-minus"></i></button>
-                </div>
-                <div class="row">
-                    <button onclick="display(this)" data-operation="1"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">1</button>
-                    <button onclick="display(this)" data-operation="2"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">2</button>
-                    <button onclick="display(this)" data-operation="3"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">3</button>
-                    <button onclick="display(this)" data-operation="+" class="cal_button font9 p3 symbol col3"><i
-                            class="fas fa-plus"></i></button>
-                </div>
-                <div class="row">
-                    <button onclick="previous(this)" data-operation="←"
-                        class="cal_button font9 p3 symbol col3">←</button>
-                    <button onclick="display(this)" data-operation="0"
-                        class="cal_button font9 p3 number bg_royal_blue_dark col3">0</button>
-                    <button onclick="display(this)" data-operation="."
-                        class="cal_button font9 p3 number col3">.</button>
-                    <button onclick="answer(this)" data-operation="="
-                        class="cal_button font9 p3 number col3 bg_royal_blue"><i class="fas fa-equals"></i></button>
+            <div class="cal_buttons pt1">
+                <div class="cal_numbers">
+                    <div class="row">
+                        <button onclick="history1(this)" data-operation="history" class="cal_button font9 p3 col3"><i
+                                class="fas fa-history"></i></button>
+                        <button onclick="accountClear(this)" data-operation="ac"
+                            class="cal_button font9 p3 col3">AC</button>
+                        <button onclick="clearDisplay(this)" data-operation="c" class="cal_button font9 p3 col3">C</button>
+                        <button onclick="back(this)" data-operation="back" class="cal_button font9 p3 col3"><i
+                                class="fas fa-backspace"></i></button>
+                    </div>
+                    <div class="row">
+                        <button onclick="display(this)" data-operation="("
+                            class="cal_button font9 p3 symbol col3">(</button>
+                        <button onclick="display(this)" data-operation=")" class="cal_button font9 p3 col3">)</button>
+                        <button onclick="display(this)" data-operation="%" class="cal_button font9 p3 col3">%</button>
+                        <button onclick="display(this)" data-operation="÷" class="cal_button font9 p3 symbol col3"><i
+                                class="fas fa-divide"></i></button>
+                    </div>
+                    <div class="row">
+                        <button onclick="display(this)" data-operation="7"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">7</button>
+                        <button onclick="display(this)" data-operation="8"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">8</button>
+                        <button onclick="display(this)" data-operation="9"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">9</button>
+                        <button onclick="display(this)" data-operation="×" class="cal_button font9 p3 symbol col3"><i
+                                class="fas fa-times"></i></button>
+                    </div>
+                    <div class="row">
+                        <button onclick="display(this)" data-operation="4"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">4</button>
+                        <button onclick="display(this)" data-operation="5"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">5</button>
+                        <button onclick="display(this)" data-operation="6"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">6</button>
+                        <button onclick="display(this)" data-operation="-" class="cal_button font9 p3 symbol col3"><i
+                                class="fas fa-minus"></i></button>
+                    </div>
+                    <div class="row">
+                        <button onclick="display(this)" data-operation="1"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">1</button>
+                        <button onclick="display(this)" data-operation="2"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">2</button>
+                        <button onclick="display(this)" data-operation="3"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">3</button>
+                        <button onclick="display(this)" data-operation="+" class="cal_button font9 p3 symbol col3"><i
+                                class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="row">
+                        <button onclick="previous(this)" data-operation="←"
+                            class="cal_button font9 p3 symbol col3">←</button>
+                        <button onclick="display(this)" data-operation="0"
+                            class="cal_button font9 p3 number bg_royal_blue_dark col3">0</button>
+                        <button onclick="display(this)" data-operation="."
+                            class="cal_button font9 p3 number col3">.</button>
+                        <button onclick="answer(this)" data-operation="="
+                            class="cal_button font9 p3 number col3 bg_royal_blue"><i class="fas fa-equals"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </center>
 
     <script>
         "use strict"
