@@ -149,11 +149,18 @@
             background-color: #00000035;
         }
     </style>
+    <style>
+        @media screen and (max-width:500px) {
+            .cal {
+                width: 98%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <center>
-        <div class="cal border border_blue3 bg_primary m6 pl3 pb4 pr3 pt4 rounded_lg">
+    <center style="display: flex; justify-content:center;align-items:center;height:100vh">
+        <div class="cal border border_blue3 bg_primary pl3 pb4 pr3 pt4 rounded_lg">
             <hr>
             <div class="cal_display border border_light rounded_lg">
                 <div data-operation="output" class="font9 output mr1" id="cal-output-display">&nbsp</div>
@@ -176,7 +183,8 @@
                                 class="fas fa-history"></i></button>
                         <button onclick="accountClear(this)" data-operation="ac"
                             class="cal_button font9 p3 col3">AC</button>
-                        <button onclick="clearDisplay(this)" data-operation="c" class="cal_button font9 p3 col3">C</button>
+                        <button onclick="clearDisplay(this)" data-operation="c"
+                            class="cal_button font9 p3 col3">C</button>
                         <button onclick="back(this)" data-operation="back" class="cal_button font9 p3 col3"><i
                                 class="fas fa-backspace"></i></button>
                     </div>
