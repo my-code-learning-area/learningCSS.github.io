@@ -159,15 +159,19 @@
 </head>
 
 <body>
-    <center style="display: flex; justify-content:center;align-items:center;height:100vh">
-        <div class="cal border border_blue3 bg_primary pl3 pb4 pr3 pt4 rounded_lg">
+    <input onchange="return openCloseCal(this)" hidden type="checkbox" name="cal-enable" id="cal-enable">
+    <label for="cal-enable">
+        <img src="./media/calculator.svg" alt="calculator icon" sizes="75px" height="75px" width="75px" /></label>
+    <center style="display: flex; justify-content:center;align-items:center;height:90vh">
+        <div class="cal border border_blue3 bg_primary pl3 pb4 pr3 pt4 rounded_lg" id="openCal" style="display: none;">
             <hr>
             <div class="cal_display border border_light rounded_lg">
                 <div data-operation="output" class="font9 output mr1" id="cal-output-display">&nbsp</div>
                 <hr>
                 <hr>
-                <div data-operation="input" onkeypress="return type(event)" class="font9 input" contenteditable="true"
-                    id="cal-input-display">0</div>
+                <div data-operation="input" onkeyup="execute()" onblur="inputDisplayBlur(this)"
+                    onfocus="inputDisplayFocus(this)" class="font9 input" contenteditable="true" id="cal-input-display">
+                    0</div>
             </div>
             <input type="checkbox" hidden name="closeHistory" id="toggleHistory">
             <label for="toggleHistory" id="closeHistoryLabel"></label>
@@ -233,7 +237,7 @@
                             class="cal_button font9 p3 number bg_royal_blue_dark col3">0</button>
                         <button onclick="display(this)" data-operation="."
                             class="cal_button font9 p3 number col3">.</button>
-                        <button onclick="answer(this)" data-operation="="
+                        <button id="cal-answer" onclick="answer(this)" data-operation="="
                             class="cal_button font9 p3 symbol col3"><i class="fas fa-equals"></i></button>
                     </div>
                 </div>
@@ -242,7 +246,6 @@
     </center>
 
     <script>
-        "use strict"
         function getInputDisplay() {
             let element = document.getElementById("cal-input-display");
             return element;
@@ -253,19 +256,131 @@
             return element;
         }
 
+        function getCaretPosition(editableDiv) {
+            var caretPos = 0,
+                sel, range;
+            if (window.getSelection) {
+                sel = window.getSelection();
+                if (sel.rangeCount) {
+                    range = sel.getRangeAt(0);
+                    if (range.commonAncestorContainer.parentNode == editableDiv) {
+                        caretPos = range.endOffset;
+                    }
+                }
+            } else if (document.selection && document.selection.createRange) {
+                range = document.selection.createRange();
+                if (range.parentElement() == editableDiv) {
+                    var tempEl = document.createElement("span");
+                    editableDiv.insertBefore(tempEl, editableDiv.firstChild);
+                    var tempRange = range.duplicate();
+                    tempRange.moveToElementText(tempEl);
+                    tempRange.setEndPoint("EndToEnd", range);
+                    caretPos = tempRange.text.length;
+                }
+            }
+            return caretPos;
+        }
+        function placeCaretAtEnd(el) {
+            el.focus();
+            if (typeof window.getSelection != "undefined"
+                && typeof document.createRange != "undefined") {
+                var range = document.createRange();
+                range.selectNodeContents(el);
+                range.collapse(false);
+                var sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
+            } else if (typeof document.body.createTextRange != "undefined") {
+                var textRange = document.body.createTextRange();
+                textRange.moveToElementText(el);
+                textRange.collapse(false);
+                textRange.select();
+            }
+        }
+
+        var displayFocus = false;
+        var cursorEnd = true;
+
+        function inputDisplayBlur() {
+            displayFocus = false;
+            cursorEnd = true;
+        }
+
+        function inputDisplayFocus() {
+            displayFocus = true;
+        }
+
         ///////////////////////////
-        function type(e) {
-            let key;
-            if (window.event) { // IE                  
-                key = e.keyCode;
-            } else if (e.which) { // Netscape/Firefox/Opera                 
-                key = e.which;
+        function openCloseCal(element) {
+            if (element.checked) {
+                document.getElementById('openCal').style.display = "block";
+                document.body.onkeydown = backPress;
+                document.body.onkeypress = function (e) {
+                    let key = e.key
+                    console.log(key)
+                    let position
+                    console.log(getCaretPosition(getInputDisplay()))
+                    if (key == 'Enter') {
+                        answer(document.getElementById('cal-answer'))
+                        return false;
+                    } else {
+                        if (displayFocus == false) {
+                            display = getInputDisplay()
+                            if (display.innerText != '0') {
+                                position = display.innerText.length
+                                display.innerText = display.innerText.substring(0, position) + key + display.innerText.substring(position)
+                                cursorEnd = true;
+                            } else {
+                                position = display.innerText.length
+                                display.innerText = key
+                                cursorEnd = true;
+                            }
+                        } else {
+                            if (getInputDisplay().innerText.length == getCaretPosition(getInputDisplay()))
+                                cursorEnd = true;
+                            else {
+                                cursorEnd = false;
+                            }
+                        }
+                    }
+                    execute()
+                }
+            } else {
+                document.getElementById('openCal').style.display = "none";
+                document.body.onkeypress = {}
+                document.body.onkeydown = {};
+            }
+        }
+
+        function backPress(e) {
+            if (e.key == "ArrowLeft") {
+                if (cursorEnd) {
+                    placeCaretAtEnd(getInputDisplay())
+                    cursorEnd = false;
+                }
+            }
+            if (e.key == "ArrowRight") {
+                getInputDisplay().focus();
+            }
+            if (e.key == "ArrowUp") {
+                getInputDisplay().focus();
+            }
+            if (e.key == "ArrowDown") {
+                getInputDisplay().focus();
             }
 
-            if (key == 13) { }
+            if (e.key == "Backspace" && cursorEnd) {
+                if (displayFocus == false) {
+                    position = getInputDisplay().innerText.length
+                    getInputDisplay().innerText = getInputDisplay().innerText.substring(0, position - 1) + getInputDisplay().innerText.substring(position)
+                }
+            }
 
-            console.log(key)
+            execute()
+
+            return true;
         }
+
         function history1(element) {
             document.getElementById('toggleHistory').checked = true;
 
@@ -322,6 +437,7 @@
             if (display.innerText.length == 0) {
                 display.innerText = '0'
             }
+
             pointer = 1
             execute()
         }
@@ -381,16 +497,24 @@
         ///////////////////////////
 
         function execute(cls = false) {
-            let expression = getInputDisplay().innerText
+            let display = getInputDisplay();
+            display.innerText = display.innerText.replaceAll('*', '×');
+            display.innerText = display.innerText.replaceAll('/', '÷');
 
-            expression = expression.replaceAll('×', '*');
+            let expression = display.innerText
+
+            expression = expression.replaceAll('×', '*')
             expression = expression.replaceAll('÷', '/');
 
             let answer = eval(expression)
 
-            getOutputDisplay().innerText = answer
-            cls ? getInputDisplay().innerText = answer : false
+            if (answer == undefined) {
+                expression = ''
+                answer = ''
+            }
 
+            getOutputDisplay().innerHTML = answer == '' ? '&nbsp' : answer
+            cls ? getInputDisplay().innerText = answer : false
             return { "expression": expression, "answer": answer }
         }
 
