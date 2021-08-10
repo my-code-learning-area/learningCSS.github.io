@@ -169,8 +169,8 @@
                 <div data-operation="output" class="font9 output mr1" id="cal-output-display">&nbsp</div>
                 <hr>
                 <hr>
-                <div data-operation="input" onkeyup="execute()" onblur="inputDisplayBlur(this)"
-                    onfocus="inputDisplayFocus(this)" class="font9 input" contenteditable="true" id="cal-input-display">
+                <div data-operation="input" onblur="inputDisplayBlur(this)" onfocus="inputDisplayFocus(this)"
+                    onkeyup="execute()" class="font9 input" contenteditable="true" id="cal-input-display">
                     0</div>
             </div>
             <input type="checkbox" hidden name="closeHistory" id="toggleHistory">
@@ -280,6 +280,7 @@
             }
             return caretPos;
         }
+
         function placeCaretAtEnd(el) {
             el.focus();
             if (typeof window.getSelection != "undefined"
@@ -317,9 +318,8 @@
                 document.body.onkeydown = backPress;
                 document.body.onkeypress = function (e) {
                     let key = e.key
-                    console.log(key)
                     let position
-                    console.log(getCaretPosition(getInputDisplay()))
+                    //console.log(getCaretPosition(getInputDisplay()))
                     if (key == 'Enter') {
                         answer(document.getElementById('cal-answer'))
                         return false;
@@ -433,6 +433,7 @@
 
         function back(element) {
             let display = getInputDisplay();
+
             display.innerText = display.innerText.substring(0, display.innerText.length - 1)
             if (display.innerText.length == 0) {
                 display.innerText = '0'
@@ -498,9 +499,6 @@
 
         function execute(cls = false) {
             let display = getInputDisplay();
-            display.innerText = display.innerText.replaceAll('*', '×');
-            display.innerText = display.innerText.replaceAll('/', '÷');
-
             let expression = display.innerText
 
             expression = expression.replaceAll('×', '*')
