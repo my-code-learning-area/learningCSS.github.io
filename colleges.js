@@ -26,7 +26,6 @@ function change(key) {
         }
         html += "</ul>"
         if (((i + 1) % 3 === 0)) {
-            console.log("yes")
             html += '<div class="pagebreak"></div>'
         }
     }

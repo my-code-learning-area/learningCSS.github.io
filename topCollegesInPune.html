@@ -23,99 +23,15 @@
     </center>
     <div id="output"></div>
 
+    <script src="./topColelgeList.js"></script>
     <script>
-        let college = [
-            {
-                name: 'COEP = College Of Engineering Pune',
-                location: 'pune',
-                fee: 65000,
-                placement: 79.53,
-                average: 6.5,
-                highest: 39
-            },
-            {
-                name: 'VIT = Vishvakarma Institute of Technology',
-                location: 'pune',
-                fee: 170000,
-                placement: 72,
-                average: 5.5,
-                highest: 28
-            },
-            {
-                name: 'PICT = Pune Institute Of Computer Technology',
-                location: 'pune',
-                fee: 95000,
-                placement: 85,
-                average: 5,
-                highest: 16.5
-            },
-            {
-                name: 'PCCOE = Pimpri Chinchwad College of Engineering',
-                location: 'pune',
-                fee: 140000,
-                placement: 55,
-                average: 6.5,
-                highest: 11
-            },
-            {
-                name: 'MIT-WPU = MIT World Peace University',
-                location: 'pune',
-                fee: 310000,
-                placement: 80,
-                average: 3,
-                highest: 37
-            },
-            {
-                name: 'Sinhagad College of Pune',
-                location: 'pune',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: 'Modern College of Engineering Pune',
-                location: 'pune',
-                fee: 99000,
-                placement: 0,
-                average: 4,
-                highest: 0
-            },
-            {
-                name: 'Dr. D.Y.Patil Institute of Technology',
-                location: 'pune',
-                fee: 5739,
-                'fee for OBC': 60543,
-                placement: 50,
-                average: 4.5,
-                highest: 30
-            },
-            {
-                name: 'All India Shri Shivaji Memorial Society College of Engineering',
-                location: 'pune',
-                fee: 140000,
-                placement: 50,
-                average: 4,
-                highest: 12
-            },
-            {
-                name: 'Government College of Engineering and Research Avasari',
-                location: 'pune',
-                fee: 28000,
-                placement: 60,
-                average: 3.5,
-                highest: 91
-            },
-            {
-                name: '',
-                location: 'pune',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-
-        ];
+        let c = []
+        for (let i = 0; i < college.length; i++) {
+            if (college[i]['location'] == 'pune') {
+                c.push(college[i])
+            }
+        }
+        college = c;
     </script>
     <script src="./colleges.js"></script>
 </body>

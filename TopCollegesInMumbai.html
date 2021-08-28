@@ -23,106 +23,15 @@
     </center>
     <div id="output"></div>
 
+    <script src="./topColelgeList.js"></script>
     <script>
-        let college = [
-            {
-                name: 'ICT = Institute of Chemical Technology',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: 'VJTI = Veermata Jijabaai Technology Institute',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: 'Sardar Patel Institute of Technology',
-                location: 'mumbai',
-                fee: 0,
-                placement: 100,
-                average: 11,
-                highest: 42
-            },
-            {
-                name: 'DJ Sanghli = Dwarkadas Jeevandas Sanghli',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: 'Somya college',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: 'VESIT = Vivekanand Education Society Institute of Technology',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: 'TSEC = Thadomal Shahani Engineering College',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: 'RAIT = Ramrao Adik Institute of Technology',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: '',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: '',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: '',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-            {
-                name: '',
-                location: 'mumbai',
-                fee: 0,
-                placement: 0,
-                average: 0,
-                highest: 0
-            },
-
-        ];
+        let c = []
+        for (let i = 0; i < college.length; i++) {
+            if (college[i]['location'] == 'mumbai') {
+                c.push(college[i])
+            }
+        }
+        college = c;
     </script>
     <script src="./colleges.js"></script>
 </body>
