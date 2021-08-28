@@ -16,7 +16,7 @@ let college = [
         highest: 12
     },
     {
-        name: 'VJTTI = Veermata Jijabai Technological Institute',
+        name: 'VJTI = Veermata Jijabai Technological Institute',
         location: 'mumbai',
         fee: 82000,
         placement: 74.04,
@@ -54,14 +54,6 @@ let college = [
         placement: 75,
         average: 5,
         highest: 21
-    },
-    {
-        name: 'Government College of Engineering',
-        location: 'Avsari',
-        fee: 0,
-        placement: 0,
-        average: 0,
-        highest: 0
     },
     {
         name: 'Shree Guru Gobind Singhji Institute of Engineering and Technology',
@@ -171,14 +163,6 @@ let college = [
     },
     {
         name: 'ICT = Institute of Chemical Technology',
-        location: 'mumbai',
-        fee: 0,
-        placement: 0,
-        average: 0,
-        highest: 0
-    },
-    {
-        name: 'VJTI = Veermata Jijabaai Technology Institute',
         location: 'mumbai',
         fee: 0,
         placement: 0,
