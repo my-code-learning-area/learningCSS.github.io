@@ -7,7 +7,9 @@ let college = [
         cutoff_lastYear: "SC:91 | OBC: 93.20",
         placement: 60,
         average: 3.6,
-        highest: 8
+        highest: 8,
+        top15: true,
+        government: true,
     },
     {
         name: 'Government College of Engineering',
@@ -17,7 +19,9 @@ let college = [
         cutoff_lastYear: "SC:93.43 | OBC:93.03",
         placement: 85,
         average: 4.5,
-        highest: 12
+        highest: 12,
+        top15: true,
+        government: true,
     },
     {
         name: 'VJTI = Veermata Jijabai Technological Institute',
@@ -27,7 +31,8 @@ let college = [
         cutoff_lastYear: "SC:95.33 | OBC:97.31",
         placement: 74.04,
         average: 7.65,
-        highest: 36
+        highest: 36,
+        top15: true,
     },
     {
         name: 'VIT = Vishvakarma Institute of Technology',
@@ -37,7 +42,8 @@ let college = [
         cutoff_lastYear: "SC:92.97 | OBC:94.91",
         placement: 72,
         average: 5.5,
-        highest: 28
+        highest: 28,
+        top15: true,
     },
     {
         name: 'VNIT = Vishvesvarya National Institute of Technology',
@@ -46,7 +52,8 @@ let college = [
         intake: -1,
         placement: 70,
         average: 6.5,
-        highest: 22
+        highest: 22,
+        top15: true,
     },
     {
         name: 'Government College of Engineering',
@@ -56,7 +63,8 @@ let college = [
         cutoff_lastYear: "SC: 90.13 | OBC: 92.86",
         placement: -1,
         average: 4.3,
-        highest: 17
+        highest: 17,
+        government: true,
     },
     {
         name: 'SPCE = Sardar Patel College of Engineering',
@@ -65,7 +73,8 @@ let college = [
         intake: 12,
         placement: 75,
         average: 5,
-        highest: 21
+        highest: 21,
+        top15: true,
     },
     {
         name: 'Shree Guru Gobind Singhji Institute of Engineering and Technology',
@@ -75,7 +84,8 @@ let college = [
         cutoff_lastYear: "SC: 90.97 | OBC: 93.20",
         placement: 55,
         average: 5,
-        highest: 12
+        highest: 12,
+        top15: true,
     },
     {
         name: 'Yashwantrao Chavhan College of Engineering',
@@ -93,7 +103,8 @@ let college = [
         cutoff_lastYear: "SC: 92.75 | OBC: 95.19",
         placement: 70,
         average: 5,
-        highest: 21
+        highest: 21,
+        top15: true,
     },
     {
         name: 'Shree Ramdevbaba College of Engineering',
@@ -112,7 +123,8 @@ let college = [
         cutoff_lastYear: "SC:95.09 | OBC:97.03",
         placement: 79.53,
         average: 6.5,
-        highest: 39
+        highest: 39,
+        top15: true,
     },
 
     {
@@ -123,7 +135,8 @@ let college = [
         cutoff_lastYear: "SC:93.83 | OBC:96.00",
         placement: 85,
         average: 5,
-        highest: 16.5
+        highest: 16.5,
+        top15: true,
     },
     {
         name: 'PCCOE = Pimpri Chinchwad College of Engineering',
@@ -133,7 +146,8 @@ let college = [
         cutoff_lastYear: "SC: 91.69 | OBC: 93.94",
         placement: 55,
         average: 6.5,
-        highest: 11
+        highest: 11,
+        top15: true,
     },
     {
         name: 'MIT-WPU = MIT World Peace University',
@@ -142,7 +156,8 @@ let college = [
         intake: -1,
         placement: 80,
         average: 3,
-        highest: 37
+        highest: 37,
+        top15: true,
     },
     {
         name: 'Sinhagad College of Pune',
@@ -173,7 +188,8 @@ let college = [
         cutoff_lastYear: "SC:88.97 | OBC:92.57",
         placement: 50,
         average: 4.5,
-        highest: 30
+        highest: 30,
+        top15: true,
     },
     {
         name: 'All India Shri Shivaji Memorial Society College of Engineering',
@@ -183,7 +199,8 @@ let college = [
         cutoff_lastYear: "SC: 88.40 | OBC: 91.77",
         placement: 50,
         average: 4,
-        highest: 12
+        highest: 12,
+        top15: true,
     },
     {
         name: 'Government College of Engineering and Research Avsari',
@@ -193,7 +210,9 @@ let college = [
         cutoff_lastYear: "SC: 90.17 | OBC: 92.63",
         placement: 60,
         average: 3.5,
-        highest: 91
+        highest: 91,
+        top15: true,
+        government: true,
     },
     {
         name: 'ICT = Institute of Chemical Technology',
