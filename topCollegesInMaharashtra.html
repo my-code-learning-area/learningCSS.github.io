@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>top 15 colleges</title>
+    <link rel="stylesheet" href="./colleges.css">
+</head>
+
+<body>
+    <br>
+    <center>
+        <h1>
+            Sort by: <select onchange="change(this.value)">
+                <option default value="placement">Placement</option>
+                <option value="fee">Fee</option>
+                <option value="average">Average salary</option>
+                <option value="highest">Highest salary</option>
+            </select>
+        </h1>
+    </center>
+    <div id="output"></div>
+
+    <script>
+        let college = [
+            {
+                name: '',
+                location: '',
+                fee: 0,
+                placement: 0,
+                average: 0,
+                highest: 0
+            },
+            {
+                name: '',
+                location: '',
+                fee: 0,
+                placement: 0,
+                average: 0,
+                highest: 0
+            },
+            {
+                name: '',
+                location: '',
+                fee: 0,
+                placement: 0,
+                average: 0,
+                highest: 0
+            },
+            {
+                name: '',
+                location: '',
+                fee: 0,
+                placement: 0,
+                average: 0,
+                highest: 0
+            },
+
+        ];
+    </script>
+    <script src="./colleges.js"></script>
+</body>
+
+</html>
