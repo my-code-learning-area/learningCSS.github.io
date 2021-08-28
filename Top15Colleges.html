@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>top 15 colleges</title>
+    <link rel="stylesheet" href="./colleges.css">
+</head>
+
+<body>
+    <br>
+    <center>
+        <h1>
+            Sort by: <select onchange="change(this.value)">
+                <option default value="placement">Placement</option>
+                <option value="fee">Fee</option>
+                <option value="average">Average salary</option>
+                <option value="highest">Highest salary</option>
+            </select>
+        </h1>
+    </center>
+    <div id="output"></div>
+
+    <script>
+        let college = [
+            {
+                name: 'COEP = College Of Engineering Pune',
+                location: 'pune',
+                fee: 65000,
+                placement: 79.53,
+                average: 6.5,
+                highest: 39
+            },
+            {
+                name: 'VJTTI = Veermata Jijabai Technological Institute',
+                location: 'mumbai',
+                fee: 82000,
+                placement: 74.04,
+                average: 7.65,
+                highest: 36
+            },
+            {
+                name: 'VIT = Vishvakarma Institute of Technology',
+                location: 'maybe pune',
+                fee: 170000,
+                placement: 72,
+                average: 5.5,
+                highest: 28
+            },
+            {
+                name: 'WCE = Walchand College Of Engineering',
+                location: 'sangli',
+                fee: 85000,
+                placement: 70,
+                average: 5,
+                highest: 21
+            },
+            {
+                name: 'SPCE = Sardar Patel College of Engineering',
+                location: 'andheri west, mumbai',
+                fee: 88000,
+                placement: 75,
+                average: 5,
+                highest: 21
+            },
+            {
+                name: 'MIT-WPU = MIT World Peace University',
+                location: 'pune',
+                fee: 310000,
+                placement: 80,
+                average: 3,
+                highest: 37
+            },
+            {
+                name: 'VNIT = Vishvesvarya National Institute of Technology',
+                location: 'nagpur',
+                fee: 100000,
+                placement: 70,
+                average: 6.5,
+                highest: 22
+            },
+            {
+                name: 'PICT = Pune Institute Of Computer Technology',
+                location: 'pune',
+                fee: 95000,
+                placement: 85,
+                average: 5,
+                highest: 16.5
+            },
+            {
+                name: 'Government College of Engineering',
+                location: 'karad',
+                fee: 65000,
+                placement: 85,
+                average: 4.5,
+                highest: 12
+            },
+            {
+                name: 'Government College of Engineering and Research Avasari',
+                location: 'pune',
+                fee: 28000,
+                placement: 60,
+                average: 3.5,
+                highest: 91
+            },
+            {
+                name: 'Government College of Engineering',
+                location: 'aurangabad',
+                fee: 25000,
+                placement: 60,
+                average: 3.6,
+                highest: 8
+            },
+            {
+                name: 'Shree Guru Gobind Singhji Institute of Engineering and Technology',
+                location: 'nanded',
+                fee: 60000,
+                placement: 55,
+                average: 5,
+                highest: 12
+            },
+            {
+                name: 'PCCE = Pimpri Chinchwad College of Engieering',
+                location: 'neegdi',
+                fee: 140000,
+                placement: 55,
+                average: 6.5,
+                highest: 11
+            },
+            {
+                name: 'Dr. D.Y.Patil Institute of Technology',
+                location: 'aakurdi',
+                fee: 130000,
+                placement: 50,
+                average: 4.5,
+                highest: 30
+            },
+            {
+                name: 'All India Shri Shivaji Memorial Society College of Engineering',
+                location: 'kenediroad, pune',
+                fee: 140000,
+                placement: 50,
+                average: 4,
+                highest: 12
+            },
+
+        ];
+    </script>
+    <script src="./colleges.js"></script>
+</body>
+
+</html>
