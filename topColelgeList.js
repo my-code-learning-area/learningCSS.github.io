@@ -113,7 +113,7 @@ let college = [
         intake: -1,
         placement: -1,
         average: -1,
-        highest: -1
+        highest: -1,
     },
     {
         name: 'COEP = College Of Engineering Pune',
@@ -125,6 +125,7 @@ let college = [
         average: 6.5,
         highest: 39,
         top15: true,
+        government: true,
     },
 
     {
