@@ -158,7 +158,7 @@
                 location: 'pune',
                 fee: 95000,
                 placement: 85,
-                average: 51,
+                average: 5,
                 highest: 16.5
             },
             {
@@ -222,7 +222,12 @@
         function change(key) {
             college = college.slice(0);
             college.sort(function (a, b) {
-                return a[key] - b[key];
+                if (key == 'fee') {
+                    return a[key] - b[key];
+
+                } else {
+                    return b[key] - a[key];
+                }
             });
 
             // creating output html
