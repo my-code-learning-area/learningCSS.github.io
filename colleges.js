@@ -36,3 +36,5 @@ function change(key) {
     document.getElementById("output").innerHTML = html;
 }
 change('placement');
+
+document.head.innerHTML += `<link rel="shortcut icon" href="./media/degree.png" type="image/x-icon">`
