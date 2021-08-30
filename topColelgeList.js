@@ -106,7 +106,7 @@ let college = [
         intake:12,
         placement: -1,
         average: -1,
-        highest: -1,
+        highest: 22,
     },
     {
         name: 'VJTI = Veermata Jijabai Technological Institute',
