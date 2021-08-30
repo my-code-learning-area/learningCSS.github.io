@@ -100,6 +100,15 @@ let college = [
         government: true,
     },
     {
+        name: 'Jawaharlal Nehru Engineering College (MGM University)',
+        location: 'aurangabad',
+        fee: 155000,
+        intake:12,
+        placement: -1,
+        average: -1,
+        highest: -1,
+    },
+    {
         name: 'VJTI = Veermata Jijabai Technological Institute',
         location: 'mumbai',
         aided: "YES",
