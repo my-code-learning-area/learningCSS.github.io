@@ -4,7 +4,7 @@ let college = [
         location: 'karad',
         fee: 65000,
         intake: 6,
-        alert: "<i>Only IT department is available</i>",
+        alert: "<i style='color:orange'>Only IT department is available</i>",
         cutoff_lastYear: "SC:93.43 | OBC:93.03",
         placement: 85,
         average: 4.5,
@@ -181,6 +181,10 @@ let college = [
 
 
 
+
+
+
+
     {
         name: 'VJTI = Veermata Jijabai Technological Institute',
         location: 'mumbai',
@@ -199,7 +203,7 @@ let college = [
         name: 'Sardar Patel Institute of Technology',
         location: 'mumbai',
         aided: "YES",
-        fee: 11550,
+        fee: 115500,
         intake: 7,
         cutoff_lastYear: "SC:96.69 | OBC:95.03",
         placement: 100,
