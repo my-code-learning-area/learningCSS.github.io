@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>selected college list</title>
+    <link rel="stylesheet" href="./colleges.css">
 </head>
+
 <body>
-    <h1>In Developement</h1>
+    <br>
+    <center>
+        <h1>
+            Sort by: <select onchange="change(this.value)">
+                <option default value="placement">Placement</option>
+                <option value="intake">intake</option>
+                <option value="fee">Fee</option>
+                <option value="average">Average salary</option>
+                <option value="highest">Highest salary</option>
+            </select>
+        </h1>
+    </center>
+    <div id="output"></div>
+
+    <script src="./topColelgeList.js"></script>
+    <script>
+        let c = []
+        for (let i = 0; i < college.length; i++) {
+            let location = college[i]['location'];
+            let name = college[i]['name'];
+            if (
+                location != 'mumbai' &&
+                location != "nanded" &&
+                name != "Shree Ramdevbaba College of Engineering" &&
+                location != 'yavatmal' &&
+                location != 'chandrapur' &&
+                location != 'nagpur' &&
+                location != 'amravati'
+            ) {
+                c.push(college[i])
+            }
+        }
+        college = c;
+    </script>
+    <script src="./colleges.js"></script>
 </body>
+
 </html>

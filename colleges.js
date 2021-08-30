@@ -17,7 +17,7 @@ function change(key) {
         html += i + 1
         let c = college[i];
         for (let key in c) {
-            if (key != "top15" && key != "government") {
+            if (key != "government") { // key != "top15" && 
                 html += "<li>"
                 html += "<b>"
                 html += key

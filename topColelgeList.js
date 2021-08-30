@@ -27,11 +27,11 @@ let college = [
     {
         name: 'Government College of Engineering',
         location: 'jalgaon',
-        fee: -1,
+        fee: 82956,
         intake: -1,
         placement: -1,
-        average: -1,
-        highest: -1,
+        average: 3.5,
+        highest: 7.5,
         government: true,
     },
     {
@@ -131,16 +131,6 @@ let college = [
         placement: 70,
         average: 6.5,
         highest: 22,
-        top15: true,
-    },
-    {
-        name: 'SPCE = Sardar Patel College of Engineering',
-        location: 'mumbai',
-        fee: 88000,
-        intake: 12,
-        placement: 75,
-        average: 5,
-        highest: 21,
         top15: true,
     },
     {
@@ -262,15 +252,6 @@ let college = [
         top15: true,
     },
     {
-        name: 'ICT = Institute of Chemical Technology',
-        location: 'mumbai',
-        fee: -1,
-        intake: -1,
-        placement: -1,
-        average: -1,
-        highest: -1
-    },
-    {
         name: 'Sardar Patel Institute of Technology',
         location: 'mumbai',
         aided: "YES",
@@ -335,6 +316,15 @@ let college = [
         placement: -1,
         average: 7,
         highest: 12,
+    },
+    {
+        name: 'DKTE Society\'s Textile and Engineering Institute, ichalkaranji',
+        location: 'kolhapur',
+        fee: 100000,
+        intake: 12,
+        placement: 90,
+        average: 4,
+        highest: -1,
     },
 
 ];
