@@ -17,14 +17,14 @@ function change(key) {
         html += i + 1
         let c = college[i];
         for (let key in c) {
-            if (key != "government") { // key != "top15" && 
-                html += "<li>"
-                html += "<b>"
-                html += key
-                html += ": </b>"
-                html += c[key]
-                html += "</li>"
-            }
+            // if (key != "government") { // key != "top15" && 
+            html += "<li>"
+            html += "<b>"
+            html += key
+            html += ": </b>"
+            html += c[key]
+            html += "</li>"
+            // }
         }
         html += "</ul>"
         if (((i + 1) % 3 === 0)) {

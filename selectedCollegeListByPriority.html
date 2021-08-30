@@ -14,8 +14,8 @@
     <center>
         <h1>
             Sort by: <select onchange="change(this.value)">
-                <option default value="placement">Placement</option>
-                <option value="priority">priority</option>
+                <option default value="priority">priority</option>
+                <option value="placement">Placement</option>
                 <option value="intake">intake</option>
                 <option value="fee">Fee</option>
                 <option value="average">Average salary</option>
@@ -35,6 +35,10 @@
         college = c;
     </script>
     <script src="./colleges.js"></script>
+    <script>
+        change('priority');
+
+    </script>
 </body>
 
 </html>

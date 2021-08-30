@@ -63,9 +63,10 @@ let college = [
         cutoff_lastYear: "SC: 90.17 | OBC: 92.63",
         placement: 60,
         average: 3.5,
-        highest: 91,
+        highest: 9,
         top15: true,
         government: true,
+        priority: 10,
     },
     {
         name: 'Government College of Engineering',
@@ -77,6 +78,7 @@ let college = [
         average: 4.3,
         highest: 17,
         government: true,
+        priority: 15,
     },
     {
         name: 'Government College of Engineering',
@@ -99,6 +101,7 @@ let college = [
         highest: 8,
         top15: true,
         government: true,
+        priority: 11,
     },
     {
         name: 'Jawaharlal Nehru Engineering College (MGM University)',
@@ -120,7 +123,7 @@ let college = [
         average: 7.65,
         highest: 36,
         top15: true,
-        priority: 0,
+        priority: 1,
         government: true,
     },
     {
@@ -133,6 +136,7 @@ let college = [
         average: 5.5,
         highest: 28,
         top15: true,
+        priority: 6,
     },
     {
         name: 'VNIT = Vishvesvarya National Institute of Technology',
@@ -177,6 +181,7 @@ let college = [
         highest: 21,
         top15: true,
         government: true,
+        priority: 7,
     },
     {
         name: 'Shree Ramdevbaba College of Engineering',
@@ -196,7 +201,7 @@ let college = [
         placement: 85,
         average: 5,
         highest: 16.5,
-        priority: 2,
+        priority: 4,
         top15: true,
     },
     {
@@ -209,6 +214,7 @@ let college = [
         average: 6.5,
         highest: 11,
         top15: true,
+        priority: 8,
     },
     {
         name: 'MIT-WPU = MIT World Peace University',
@@ -221,14 +227,25 @@ let college = [
         top15: true,
     },
     {
+        name: 'VIIT = Vishvakarma Institute of Information Technology',
+        location: 'pune',
+        fee: -1,
+        intake: -1,
+        placement: 55,
+        average: -1,
+        highest: -1,
+        priority: 9,
+    },
+    {
         name: 'Sinhagad College of Pune',
         location: 'pune',
         fee: -1,
         intake: 24,
-        cutoff_lastYear: "SC: 88 |OBC: 91.42",
+        cutoff_lastYear: "SC: 88 | OBC: 91.42",
         placement: -1,
         average: -1,
-        highest: -1
+        highest: -1,
+        priority: 14,
     },
     {
         name: 'Modern College of Engineering Pune',
@@ -251,6 +268,7 @@ let college = [
         average: 4.5,
         highest: 30,
         top15: true,
+        priority: 12,
     },
     {
         name: 'All India Shri Shivaji Memorial Society College of Engineering',
@@ -262,6 +280,7 @@ let college = [
         average: 4,
         highest: 12,
         top15: true,
+        priority: 13,
     },
     {
         name: 'Sardar Patel Institute of Technology',
@@ -274,7 +293,7 @@ let college = [
         average: 11,
         highest: 42,
         top15: true,
-        priority: 1,
+        priority: 2,
         government: true,
     },
     {
@@ -330,6 +349,7 @@ let college = [
         placement: -1,
         average: 7,
         highest: 12,
+        priority:5,
     },
     {
         name: 'DKTE Society\'s Textile and Engineering Institute, ichalkaranji',
