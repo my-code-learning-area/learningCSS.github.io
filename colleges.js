@@ -1,7 +1,7 @@
 function change(key) {
     college = college.slice(0);
     college.sort(function (a, b) {
-        if (key == 'fee') {
+        if (key == 'fee' || key == 'priority') {
             return a[key] - b[key];
 
         } else {

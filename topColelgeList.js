@@ -9,6 +9,7 @@ let college = [
         average: 6.5,
         highest: 39,
         top15: true,
+        priority: 3,
         government: true,
     },
     {
@@ -103,7 +104,7 @@ let college = [
         name: 'Jawaharlal Nehru Engineering College (MGM University)',
         location: 'aurangabad',
         fee: 155000,
-        intake:12,
+        intake: 12,
         placement: -1,
         average: -1,
         highest: 22,
@@ -119,6 +120,7 @@ let college = [
         average: 7.65,
         highest: 36,
         top15: true,
+        priority: 0,
         government: true,
     },
     {
@@ -194,6 +196,7 @@ let college = [
         placement: 85,
         average: 5,
         highest: 16.5,
+        priority: 2,
         top15: true,
     },
     {
@@ -271,6 +274,7 @@ let college = [
         average: 11,
         highest: 42,
         top15: true,
+        priority: 1,
         government: true,
     },
     {
