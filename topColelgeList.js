@@ -185,35 +185,7 @@ let college = [
 
 
 
-    {
-        name: 'VJTI = Veermata Jijabai Technological Institute',
-        location: 'mumbai',
-        aided: "YES",
-        fee: 82000,
-        intake: 8,
-        cutoff_lastYear: "SC:95.33 | OBC:97.31",
-        placement: 74.04,
-        average: 7.65,
-        highest: 36,
-        top15: true,
-        government: true,
-        priority: 1,
-    },
-    {
-        name: 'Sardar Patel Institute of Technology',
-        location: 'mumbai',
-        aided: "YES",
-        fee: 115500,
-        intake: 7,
-        cutoff_lastYear: "SC:96.69 | OBC:95.03",
-        placement: 100,
-        average: 11,
-        highest: 42,
-        top15: true,
-        government: true,
-        priority: 2,
-    },
-    {
+        {
         name: 'COEP = College Of Engineering Pune',
         location: 'pune',
         fee: 65000,
@@ -224,7 +196,7 @@ let college = [
         highest: 39,
         top15: true,
         government: true,
-        priority: 3,
+        priority: 1,
     },
 
     {
@@ -237,7 +209,7 @@ let college = [
         average: 5,
         highest: 16.5,
         top15: true,
-        priority: 4,
+        priority: 2,
     },
     {
         name: 'Bharti Vidyapeeth College of Engineering',
@@ -247,7 +219,7 @@ let college = [
         placement: -1,
         average: 7,
         highest: 12,
-        priority: 5,
+        priority: 3,
     },
     {
         name: 'VIT = Vishvakarma Institute of Technology',
@@ -259,7 +231,7 @@ let college = [
         average: 5.5,
         highest: 28,
         top15: true,
-        priority: 6,
+        priority: 4,
     },
     {
         name: 'WCE = Walchand College Of Engineering',
@@ -273,7 +245,7 @@ let college = [
         highest: 21,
         top15: true,
         government: true,
-        priority: 7,
+        priority: 5,
     },
     {
         name: 'Government College of Engineering and Research Avsari',
@@ -286,7 +258,7 @@ let college = [
         highest: 9,
         top15: true,
         government: true,
-        priority: 8,
+        priority: 6,
     },
     {
         name: 'PCCOE = Pimpri Chinchwad College of Engineering',
@@ -298,7 +270,7 @@ let college = [
         average: 6.5,
         highest: 11,
         top15: true,
-        priority: 9,
+        priority: 7,
     },
     {
         name: 'Government College of Engineering',
@@ -311,7 +283,7 @@ let college = [
         highest: 8,
         top15: true,
         government: true,
-        priority: 10,
+        priority: 8,
     },
     {
         name: 'VIIT = Vishvakarma Institute of Information Technology',
@@ -321,7 +293,7 @@ let college = [
         placement: 55,
         average: -1,
         highest: -1,
-        priority: 11,
+        priority: 9,
     },
 
     {
@@ -334,7 +306,7 @@ let college = [
         average: 4.5,
         highest: 30,
         top15: true,
-        priority: 12,
+        priority: 10,
     },
     {
         name: 'All India Shri Shivaji Memorial Society College of Engineering',
@@ -346,7 +318,7 @@ let college = [
         average: 4,
         highest: 12,
         top15: true,
-        priority: 13,
+        priority: 11,
     },
     {
         name: 'Sinhagad College of Pune',
@@ -357,7 +329,7 @@ let college = [
         placement: -1,
         average: -1,
         highest: -1,
-        priority: 14,
+        priority: 12,
     },
     {
         name: 'Government College of Engineering',
@@ -368,6 +340,34 @@ let college = [
         placement: -1,
         average: 4.3,
         highest: 17,
+        government: true,
+        priority: 13,
+    },
+    {
+        name: 'VJTI = Veermata Jijabai Technological Institute',
+        location: 'mumbai',
+        aided: "YES",
+        fee: 82000,
+        intake: 8,
+        cutoff_lastYear: "SC:95.33 | OBC:97.31",
+        placement: 74.04,
+        average: 7.65,
+        highest: 36,
+        top15: true,
+        government: true,
+        priority: 14,
+    },
+    {
+        name: 'Sardar Patel Institute of Technology',
+        location: 'mumbai',
+        aided: "YES",
+        fee: 115500,
+        intake: 7,
+        cutoff_lastYear: "SC:96.69 | OBC:95.03",
+        placement: 100,
+        average: 11,
+        highest: 42,
+        top15: true,
         government: true,
         priority: 15,
     },
