@@ -185,7 +185,7 @@ let college = [
 
 
 
-        {
+    {
         name: 'COEP = College Of Engineering Pune',
         location: 'pune',
         fee: 65000,
@@ -222,18 +222,6 @@ let college = [
         priority: 3,
     },
     {
-        name: 'VIT = Vishvakarma Institute of Technology',
-        location: 'pune',
-        fee: 170000,
-        intake: 31,
-        cutoff_lastYear: "SC:92.97 | OBC:94.91",
-        placement: 72,
-        average: 5.5,
-        highest: 28,
-        top15: true,
-        priority: 4,
-    },
-    {
         name: 'WCE = Walchand College Of Engineering',
         location: 'sangli',
         aided: "YES",
@@ -245,6 +233,18 @@ let college = [
         highest: 21,
         top15: true,
         government: true,
+        priority: 4,
+    },
+    {
+        name: 'VIT = Vishvakarma Institute of Technology',
+        location: 'pune',
+        fee: 170000,
+        intake: 31,
+        cutoff_lastYear: "SC:92.97 | OBC:94.91",
+        placement: 72,
+        average: 5.5,
+        highest: 28,
+        top15: true,
         priority: 5,
     },
     {
