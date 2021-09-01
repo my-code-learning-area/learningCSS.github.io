@@ -72,19 +72,6 @@ let college = [
         top15: true,
     },
     {
-        name: 'Shree Guru Gobind Singhji Institute of Engineering and Technology',
-        location: 'nanded',
-        aided: "YES",
-        fee: 60000,
-        intake: 15,
-        cutoff_lastYear: "SC: 90.97 | OBC: 93.20",
-        placement: 55,
-        average: 5,
-        highest: 12,
-        top15: true,
-        government: true,
-    },
-    {
         name: 'Yashwantrao Chavhan College of Engineering',
         location: 'nagpur',
         fee: -1,
@@ -273,6 +260,20 @@ let college = [
         priority: 7,
     },
     {
+        name: 'Shree Guru Gobind Singhji Institute of Engineering and Technology',
+        location: 'nanded',
+        aided: "YES",
+        fee: 60000,
+        intake: 15,
+        cutoff_lastYear: "SC: 90.97 | OBC: 93.20",
+        placement: 55,
+        average: 5,
+        highest: 12,
+        top15: true,
+        government: true,
+        priority:8,
+    },
+    {
         name: 'Government College of Engineering',
         location: 'aurangabad',
         fee: 25000,
@@ -283,7 +284,7 @@ let college = [
         highest: 8,
         top15: true,
         government: true,
-        priority: 8,
+        priority: 9,
     },
     {
         name: 'VIIT = Vishvakarma Institute of Information Technology',
@@ -293,7 +294,7 @@ let college = [
         placement: 55,
         average: -1,
         highest: -1,
-        priority: 9,
+        priority: 10,
     },
 
     {
@@ -306,7 +307,7 @@ let college = [
         average: 4.5,
         highest: 30,
         top15: true,
-        priority: 10,
+        priority: 11,
     },
     {
         name: 'All India Shri Shivaji Memorial Society College of Engineering',
@@ -318,7 +319,7 @@ let college = [
         average: 4,
         highest: 12,
         top15: true,
-        priority: 11,
+        priority: 12,
     },
     {
         name: 'Sinhagad College of Pune',
@@ -329,7 +330,7 @@ let college = [
         placement: -1,
         average: -1,
         highest: -1,
-        priority: 12,
+        priority: 13,
     },
     {
         name: 'Government College of Engineering',
@@ -341,7 +342,7 @@ let college = [
         average: 4.3,
         highest: 17,
         government: true,
-        priority: 13,
+        priority: 14,
     },
     {
         name: 'VJTI = Veermata Jijabai Technological Institute',
@@ -355,7 +356,7 @@ let college = [
         highest: 36,
         top15: true,
         government: true,
-        priority: 14,
+        priority: 15,
     },
     {
         name: 'Sardar Patel Institute of Technology',
@@ -369,6 +370,6 @@ let college = [
         highest: 42,
         top15: true,
         government: true,
-        priority: 15,
+        priority: 17,
     },
 ];
