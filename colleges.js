@@ -27,7 +27,7 @@ function change(key) {
             // }
         }
         html += "</ul>"
-        if (((i + 1) % 3 === 0)) {
+        if (((i + 1) % 2 === 0)) {
             html += '<div class="pagebreak"></div>'
         }
     }
