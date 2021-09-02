@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>top private</title>
     <link rel="stylesheet" href="./colleges.css">
+    <style>
+        .final {
+            background-color: rgb(105, 6, 11);
+            color:white;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,7 +43,12 @@
     <script src="./colleges.js"></script>
     <script>
         change('priority');
-
+        let uls = document.getElementsByTagName("ul");
+        for(let ul in uls) {
+            if(parseInt(ul) < 5) {
+                console.log(uls[ul].classList.add('final'))
+            }
+        }
     </script>
 </body>
 

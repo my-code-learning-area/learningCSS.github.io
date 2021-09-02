@@ -203,9 +203,9 @@ let college = [
         location: 'pune',
         fee: 120000,
         intake: -1,
-        placement: -1,
-        average: 7,
-        highest: 12,
+        placement: 86.53,
+        average: 5.1,
+        highest: 34,
         priority: 3,
     },
     {
