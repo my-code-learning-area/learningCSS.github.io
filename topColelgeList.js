@@ -157,7 +157,7 @@ let college = [
         highest: -1,
     },
     {
-        name: 'DKTE Society\'s Textile and Engineering Institute, ichalkaranji',
+        name: 'DKTE Society\'s Textile and Engineering Institute, itchalkaranji',
         location: 'kolhapur',
         fee: 100000,
         intake: 12,
@@ -165,8 +165,17 @@ let college = [
         average: 4,
         highest: -1,
     },
-
-
+    {
+        name: 'Bharti Vidyapeeth College of Engineering',
+        location: 'pune',
+        entranceExam:"<b style='color:red'>YES!</b>",
+        fee: 130000,
+        intake: -1,
+        placement: 60,
+        average: 7,
+        highest: 12,
+        topPune: 5,
+    },
 
 
 
@@ -187,7 +196,6 @@ let college = [
         topPune: 1,
         priority: 1,
     },
-
     {
         name: 'PICT = Pune Institute Of Computer Technology',
         location: 'pune',
@@ -202,17 +210,6 @@ let college = [
         priority: 2,
     },
     {
-        name: 'Bharti Vidyapeeth College of Engineering',
-        location: 'pune',
-        fee: 130000,
-        intake: -1,
-        placement: 60,
-        average: 7,
-        highest: 12,
-        topPune: 5,
-        priority: 3,
-    },
-    {
         name: 'WCE = Walchand College Of Engineering',
         location: 'sangli',
         aided: "YES",
@@ -224,7 +221,7 @@ let college = [
         highest: 21,
         top15: true,
         government: true,
-        priority: 4,
+        priority: 3,
     },
     {
         name: 'VIT = Vishvakarma Institute of Technology',
@@ -237,7 +234,7 @@ let college = [
         highest: 28,
         top15: true,
         topPune: 2,
-        priority: 5,
+        priority: 4,
     },
     {
         name: 'Government College of Engineering and Research Avsari',
@@ -250,7 +247,7 @@ let college = [
         highest: 9,
         top15: true,
         government: true,
-        priority: 6,
+        priority: 5,
     },
     {
         name: 'PCCOE = Pimpri Chinchwad College of Engineering',
@@ -263,7 +260,7 @@ let college = [
         highest: 11,
         top15: true,
         topPune: 6,
-        priority: 7,
+        priority: 6,
     },
     {
         name: 'Shree Guru Gobind Singhji Institute of Engineering and Technology',
@@ -277,7 +274,7 @@ let college = [
         highest: 12,
         top15: true,
         government: true,
-        priority: 8,
+        priority: 7,
     },
     {
         name: 'Government College of Engineering',
@@ -290,7 +287,7 @@ let college = [
         highest: 8,
         top15: true,
         government: true,
-        priority: 9,
+        priority: 8,
     },
     {
         name: 'VIIT = Vishvakarma Institute of Information Technology',
@@ -300,7 +297,7 @@ let college = [
         placement: 55,
         average: -1,
         highest: -1,
-        priority: 10,
+        priority: 9,
     },
 
     {
@@ -314,7 +311,7 @@ let college = [
         highest: 30,
         top15: true,
         topPune: 7,
-        priority: 11,
+        priority: 10,
     },
     {
         name: 'All India Shri Shivaji Memorial Society College of Engineering',
@@ -327,7 +324,7 @@ let college = [
         highest: 12,
         top15: true,
         topPune: 8,
-        priority: 12,
+        priority: 11,
     },
     {
         name: 'Sinhagad College of Pune',
@@ -339,7 +336,7 @@ let college = [
         average: 4.5,
         highest: 14,
         topPune: 9,
-        priority: 13,
+        priority: 12,
     },
     {
         name: 'Government College of Engineering',
@@ -351,7 +348,7 @@ let college = [
         average: 4.3,
         highest: 17,
         government: true,
-        priority: 14,
+        priority: 13,
     },
     {
         name: 'VJTI = Veermata Jijabai Technological Institute',
@@ -365,7 +362,7 @@ let college = [
         highest: 36,
         top15: true,
         government: true,
-        priority: 15,
+        priority: 14,
     },
     {
         name: 'Sardar Patel Institute of Technology',
@@ -379,6 +376,6 @@ let college = [
         highest: 42,
         top15: true,
         government: true,
-        priority: 17,
+        priority: 15,
     },
 ];
