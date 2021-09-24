@@ -20,80 +20,7 @@
             flex-wrap: wrap
         }
     </style>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Ubuntu');
-
-        .btnOutline {
-            display: inline-block;
-            text-decoration: none;
-            color: #333;
-            font-size: 1.3rem;
-            border: 2.5px solid #333;
-            padding: 0.5rem 1rem;
-            font-family: 'Ubuntu';
-            border-radius: 2.5px;
-            transition: all 250ms;
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            text-align: center;
-            vertical-align: middle;
-            background: #00000011;
-
-        }
-
-        .btnOutline:hover {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .btnOutline:focus {
-            outline: none;
-            box-shadow: 0 0 0.5px 2.5px #333333aa;
-        }
-
-        .btnOutline:active {
-            background-color: #000;
-        }
-
-        .btnOutline .ripple {
-            position: absolute;
-            background-color: #fff;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            animation: ripple 1500ms;
-            border-radius: 10% 50%;
-            border-radius: 50% 10%;
-        }
-
-        @keyframes ripple-r {
-            from {
-                width: 0px;
-                height: 0px;
-                opacity: 0.5;
-            }
-
-            to {
-                width: 500px;
-                height: 500px;
-                opacity: 0;
-            }
-        }
-
-        @keyframes ripple {
-            from {
-                width: 0px;
-                height: 0px;
-                opacity: 0.5;
-            }
-
-            to {
-                width: 500px;
-                height: 500px;
-                opacity: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://my-code-learning-area.github.io/learningCSS.github.io/ripple.css">
 </head>
 
 <body>
@@ -102,27 +29,7 @@
         <button class="btnOutline" style="width:200px; height:200px">Button 2</button>
     </div>
 
-    <script>
-        window.onload = () => {
-            let btns = document.getElementsByClassName("btnOutline");
-            for (let i = 0; i < btns.length; i++) {
-                btns[i].onmouseover = ripple;
-                btns[i].onclick = ripple;
-            }
-
-            function ripple(event) {
-                let ripple = document.createElement('span')
-                ripple.style.top = (event.clientY - this.offsetTop) + "px";
-                ripple.style.left = (event.clientX - this.offsetLeft) + "px";
-                ripple.classList.add("ripple");
-
-                this.append(ripple)
-
-                setTimeout(() => ripple.remove(), 5000)
-            }
-        }
-
-    </script>
+    <script src="https://my-code-learning-area.github.io/learningCSS.github.io/ripple.js"></script>
 </body>
 
 </html>
