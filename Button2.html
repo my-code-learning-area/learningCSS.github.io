@@ -38,6 +38,8 @@
             overflow: hidden;
             text-align: center;
             vertical-align: middle;
+            background: #00000011;
+
         }
 
         .btnOutline:hover {
@@ -54,13 +56,28 @@
             background-color: #000;
         }
 
-        .btnOutline span {
+        .btnOutline .ripple {
             position: absolute;
             background-color: #fff;
             transform: translate(-50%, -50%);
             pointer-events: none;
             animation: ripple 1500ms;
+            border-radius: 10% 50%;
             border-radius: 50% 10%;
+        }
+
+        @keyframes ripple-r {
+            from {
+                width: 0px;
+                height: 0px;
+                opacity: 0.5;
+            }
+
+            to {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
         }
 
         @keyframes ripple {
@@ -95,9 +112,9 @@
 
             function ripple(event) {
                 let ripple = document.createElement('span')
-
                 ripple.style.top = (event.clientY - this.offsetTop) + "px";
                 ripple.style.left = (event.clientX - this.offsetLeft) + "px";
+                ripple.classList.add("ripple");
 
                 this.append(ripple)
 
