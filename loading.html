@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #aaa,
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #aaa {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: hsla(208, 100%, 97%, 0.95);
+        }
+
+        div img {
+            width: 100%;
+        }
+
+        #aaa span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: brown;
+            animation: animate infinite 0.7s;
+            opacity: 1;
+        }
+
+        .bb {
+            filter: blur(10px);
+        }
+
+        @keyframes animate {
+            from {
+                background-color: rgb(50, 42, 165);
+            }
+
+            to {
+                transform: scale(2);
+                background-color: rgb(72, 255, 142);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="aaa">
+        <div>
+            <span></span>
+        </div>
+    </div>
+    <main class="bb" id="main">
+        <div>
+            <img src="https://images.hdqwalls.com/wallpapers/long-drives-with-you-cs.jpg" alt="">
+        </div>
+    </main>
+    <script>
+        window.onload = () => {
+            document.getElementById("aaa").remove();
+            document.getElementById("main").classList.remove("bb");
+        }
+    </script>
+</body>
+
+</html>
