@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: column;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        input {
+            font-size: 1.3rem;
+            margin: 5px 0;
+            padding: 1rem;
+            border-radius: 5px;
+            color: rgb(70, 0, 0);
+            width: 5rem;
+        }
+
+        button {
+            padding: 1.2rem !important;
+            /* width: 200px; */
+            /* height: 100px; */
+        }
+
+        .answer {
+            background-color: rgb(255, 222, 74);
+            padding: .5rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="../ripple.css">
+</head>
+
+<body>
+    <center class="container">
+        <form target="" method="get">
+            <h3 style="color: #555555aa;">AY² ± BY ± C = 0</h3>
+            <input type="text" id="a" name="a" placeholder="A" />
+            <input type="text" id="b" name="b" placeholder="B" />
+            <input type="text" id="c" name="c" placeholder="C" />
+            <br>
+            <!-- <button>find roots</button> -->
+            <button class="btnOutline">Find Roots</button>
+        </form>
+        <br>
+        <hr>
+        <br>
+        <h2>
+            The Roots Are: <br><br><span class="answer">m1 = <span id="m1"></span></span> <br> <span class="answer">m2 =
+                <span id="m2"></span></span>
+        </h2>
+    </center>
+    <script src="./index.js"></script>
+    <script src="../ripple.js"></script>
+</body>
+
+</html>
