@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>context menu</title>
+    <style>
+        @keyframes anim {
+            0% {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            40% {
+                width: 8rem;
+                height: 10rem;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        span {
+            display: inline-block;
+            position: absolute;
+            height: 15.2rem;
+            /* 241px; */
+            width: 14rem;
+            /* 224px; */
+            border: 2px solid #03a9f43d;
+            overflow-y: hidden;
+            z-index: 5;
+            transition: all .3s;
+            border-radius: 5px;
+            animation: anim .3s cubic-bezier(0.79, -0.32, 0.43, 1.07);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-transform: capitalize;
+        }
+
+        span ul {
+            margin: 0;
+            padding: 8px 5px;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        span a {
+            display: block;
+            border-bottom: 1px solid #00bcd41c;
+            padding: 10px;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        span a:hover {
+            background-color: aliceblue;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body style="height: 100vh; margin:0;">
+    <span class="d-none">
+        <ul style="list-style: none; margin-left:0">
+            <li>
+                <a href="#cut">cut</a>
+            </li>
+            <li>
+                <a href="#copy">copy</a>
+            </li>
+            <li>
+                <a href="#paste">paste</a>
+            </li>
+            <li>
+                <a href="#delete">delete</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+        </ul>
+    </span>
+    <script type="text/javascript">
+        // after request for right click-> context menu then show custom menu and hide browsers default menu
+        document.body.oncontextmenu = v => {
+            // get span element
+            let span = document.querySelector("span")
+
+            // getting actual width and height of the window
+            const { innerWidth, innerHeight } = window;
+
+            // set location of element
+            // if window is going outside in x-axis, then decrease x location and if not going outside then display it
+            ((v.clientX + 230) < innerWidth) ? span.style['left'] = `${v.clientX}px` : span.style['left'] = `${v.clientX - 230}px`;
+            // if window is going outside in y-axis, then decrease y location and if not going outside then display it
+            ((v.clientY + 248) < innerHeight) ? span.style['top'] = `${v.clientY}px` : span.style['top'] = `${v.clientY - 248}px`;
+
+            // visible the element
+            span.classList.remove("d-none");
+
+            // return false for not to show default context menu
+            return false;
+        }
+
+        // hide context after clicking outside
+        document.querySelector("span").addEventListener("click", v => {
+            let span = document.querySelector("span")
+            // span.classList.remove("d-none")
+        }, true);
+        document.body.addEventListener("click", v => {
+            let span = document.querySelector("span")
+            span.classList.add("d-none")
+        }, true);
+
+        //todo; when user click on border.. context location should be adjusted
+    </script>
+</body>
+
+</html>
