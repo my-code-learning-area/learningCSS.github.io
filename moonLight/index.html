@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parallax - Moon Light</title>
+	<style>
+		@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		body {
+			min-height: 100vh;
+			background: linear-gradient(#2b1055, #7597de);
+			/* transition: all ease-in-out 5s; */
+		}
+
+		/* /////////////////////////////////////////////// */
+
+		header {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 30px 100px;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			z-index: 1000;
+		}
+
+		header .logo {
+			color: white;
+			font-weight: 700;
+			text-decoration: none;
+			font-size: 2em;
+			text-transform: uppercase;
+		}
+
+		header ul {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		header ul li {
+			list-style: none;
+			margin-left: 20px;
+		}
+
+		header ul li a {
+			text-decoration: none;
+			padding: 6px 15px;
+			color: whitesmoke;
+			border-radius: 20px;
+		}
+
+		header ul li a:hover {
+			background-color: whitesmoke;
+			color: #2b1055;
+		}
+
+		header ul li .active {
+			background-color: white;
+			color: #2b1055;
+		}
+
+		/* /////////////////////////////////// */
+
+		section {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			padding: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+		}
+
+		section::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 100px;
+			background: linear-gradient(to top, #1c0522, transparent);
+			z-index: 12;
+		}
+
+		section img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			pointer-events: none;
+		}
+
+		section #moon {
+			mix-blend-mode: screen;
+		}
+
+		section #mountains_front {
+			top: 80px;
+			z-index: 11;
+		}
+
+		section #text {
+			position: absolute;
+			right: -350px;
+			color: white;
+			white-space: nowrap;
+			font-size: 7.5vw;
+			z-index: 10;
+		}
+
+		section .btn {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 30px;
+			border-radius: 40px;
+			background-color: white;
+			color: #1c0522;
+			font-size: 1.5em;
+			z-index: 10;
+			transform: translateY(100px);
+		}
+
+		/* ///////////////////////////////////////// */
+
+		.container {
+			position: relative;
+			padding: 100px;
+			background-color: #1c0522;
+			color: whitesmoke;
+			text-align: justify;
+		}
+
+		.container h2 {
+			font-size: 3.5em;
+		}
+	</style>
+</head>
+
+<body>
+	<header id="header">
+		<a href="#" class="logo">Logo</a>
+		<ul>
+			<li><a href="#" class="active">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Work</a></li>
+		</ul>
+	</header>
+	<section>
+		<img src="./stars.png" id="stars" alt="stars">
+		<img src="./moon.png" id="moon" alt="moon">
+		<img src="./mountains_behind.png" id="mountains_behind" alt="mountains_behind">
+		<h2 id="text">Moon Light</h2>
+		<a href="#" class="btn" id="btn">Explore</a>
+		<img src="./mountains_front.png" id="mountains_front" alt="mountains_front">
+	</section>
+	<div class="container">
+		<h2>Parallax Scrolling Effect</h2>
+		<hr style="opacity: .5;">
+		<br>
+		<br>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos in labore, tempora a sed temporibus aliquid
+			ipsum ut odio adipisci quod omnis sit nisi maiores repellat nihil id minima placeat libero, tempore sapiente
+			sequi asperiores ea ipsam! Pariatur obcaecati dicta quae vitae, ipsum eos odit sequi dolores illum, itaque
+			quasi. Inventore eaque libero quasi nobis, optio aut eum accusamus dolor assumenda laborum eveniet corrupti
+			animi, numquam deserunt deleniti? Impedit, eaque odit. Laborum nam magni nisi accusamus quas ratione?
+			Debitis odio, culpa error non recusandae incidunt modi omnis ea nobis iusto blanditiis, suscipit a itaque
+			nisi, odit minus perferendis consequatur atque sapiente esse quos expedita id maxime! Nemo dolore illum
+			dolorem qui a harum ipsam provident quibusdam aspernatur numquam tempora doloribus delectus, facere
+			molestiae minus corrupti accusamus?
+			<br><br>
+			Eligendi perferendis architecto a distinctio vero neque ratione
+			quibusdam laudantium suscipit, inventore ipsam ducimus. Aut neque commodi odit consequuntur sed. Aperiam,
+			consequatur, debitis odit non a vitae id iste ex sequi fugit esse temporibus? Eum, maiores accusantium
+			reprehenderit, nesciunt sapiente ipsa minima cumque ipsum quis veritatis illo? Deserunt ipsam sapiente eius
+			id nisi doloremque laudantium alias accusamus similique quasi, ipsa dolore odio dolores numquam natus
+			necessitatibus aliquam labore dicta nulla nobis reprehenderit maiores at cupiditate. Eos numquam doloribus
+			quaerat. Quas rerum hic culpa molestias! Pariatur quae officia iste blanditiis consectetur inventore
+			nesciunt, culpa quo vero odit in ad velit ullam, corporis esse corrupti eligendi, aspernatur quidem!
+			Possimus perspiciatis cum porro, voluptates expedita impedit cumque laboriosam voluptate modi et aperiam
+			deleniti hic aspernatur numquam, doloribus veritatis, rerum voluptatum. Vitae, porro assumenda accusamus
+			veritatis eum nostrum quod veniam, magnam facilis consectetur minus harum illo rem accusantium natus.
+			Facilis labore sint aliquam,
+			<br><br>
+			earum aspernatur optio voluptates esse similique ipsa nulla consequatur nemo
+			pariatur sapiente perspiciatis culpa soluta officia totam atque nostrum. Natus culpa enim praesentium ut
+			consectetur? Ea quas perspiciatis accusamus commodi rem modi consequatur, inventore harum nihil quasi quis
+			voluptates, voluptatum laborum fuga voluptatibus enim minus totam in minima repudiandae nemo eius cumque,
+			iste deserunt. Voluptas veritatis sunt et vero reprehenderit labore, tenetur harum ullam ea fugit unde
+			consequuntur obcaecati modi deserunt quidem quae deleniti! Laborum harum porro blanditiis aliquam veritatis,
+			odio modi tempora quisquam dolorum accusamus hic reiciendis quas in, nihil eveniet nemo ea vero nam maxime,
+			placeat fugiat necessitatibus id! Accusamus deserunt dignissimos, cumque atque veniam praesentium impedit
+			sunt molestias consectetur doloremque officia
+			<br><br>
+			incidunt optio laudantium molestiae, aut odio, maxime
+			necessitatibus alias quae illum delectus minus pariatur autem! Debitis, eveniet! Beatae, quae? Ad sint
+			aliquid, tenetur laboriosam iure labore facilis quis illo perspiciatis sed, magnam qui nam sapiente officiis
+			ut repellendus ullam dolorem libero architecto in assumenda? Perspiciatis est placeat incidunt mollitia id
+			ipsa sapiente, nam magnam maiores dolorum natus? Excepturi repellat dolorem eaque
+			qui dignissimos nemo distinctio voluptatibus placeat ut ipsa at nisi officia nam sapiente vero saepe,
+			molestias voluptates, officiis vitae illo asperiores dolor ullam est? Magnam, voluptatem exercitationem modi
+			reprehenderit quis totam in quas, quasi rem laudantium quod blanditiis ullam accusantium incidunt,
+			voluptatibus odit sunt accusamus vel tenetur neque. Laboriosam omnis eligendi ipsa iusto nihil. Rem culpa
+			velit molestias.
+		</p>
+	</div>
+	<script>
+		let stars = document.querySelector("#stars");
+		let moon = document.querySelector("#moon");
+		let mountains_behind = document.querySelector("#mountains_behind");
+		let text = document.querySelector("#text")
+		let btn = document.querySelector("#btn");
+		let mountains_front = document.querySelector("#mountains_front");
+		let header = document.querySelector("#header");
+
+		window.addEventListener("scroll", event => {
+			const value = window.scrollY;
+			stars.style.left = value * 0.3 + "px";
+			moon.style.top = value * 1.1 + "px";
+			mountains_behind.style.top = value * 0.45 + "px";
+			text.style.marginRight = value * 3.5 + "px";
+			text.style.marginTop = value * 1.4 + "px";
+			btn.style.marginTop = value * 1.5 + "px";
+			header.style.marginTop = value * .6 + "px";
+		})
+	</script>
+</body>
+
+</html>
