@@ -74,8 +74,8 @@
                 <p class="col-6 fw-bold text-info" id="perItemCost">0</h2>
             </div>
             <div class="row">
-                <p class="col-6 fw-semibold">Per Item Profit</p>
-                <p class="col-6 fw-bold text-info" id="perItemProfit">0</h2>
+                <p class="col-6 fw-semibold">Per Item Price</p>
+                <p class="col-6 fw-bold text-info" id="perItemPrice">0</h2>
             </div>
         </div>
 
@@ -117,7 +117,7 @@
         const totalGainedProfitOutput = document.getElementById('totalGainedProfit');
 
         const perItemCostOutput = document.getElementById('perItemCost');
-        const perItemProfitOutput = document.getElementById('perItemProfit');
+        const perItemPriceOutput = document.getElementById('perItemPrice');
 
         // Format numbers to 3 decimal places maximum
         function formatNumber(value) {
@@ -189,8 +189,8 @@
                     items > 1 ? formatNumber(result.perItemCost) : '—';
             }
 
-            if (perItemProfitOutput) {
-                perItemProfitOutput.textContent =
+            if (perItemPriceOutput) {
+                perItemPriceOutput.textContent =
                     items > 1 ? formatNumber(result.perItemPrice) : '—';
             }
         }
