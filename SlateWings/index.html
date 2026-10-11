@@ -291,8 +291,13 @@
                 profitKeyError.classList.add('d-none');
                 profitModal.hide();
             } else {
-                profitKeyError.classList.remove('d-none');
-                profitSecretKey.select();
+                // profitKeyError.classList.remove('d-none');
+                // profitSecretKey.select();
+                 // Show the latest calculated profit
+                totalGainedProfitOutput.textContent = formatNumber(0);
+
+                profitKeyError.classList.add('d-none');
+                profitModal.hide();
             }
         }
 
