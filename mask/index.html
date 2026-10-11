@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 50vw;
+            height: 82vh;
+            word-wrap: break-word;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        var k = 2800;
+        function randomString(length) {
+            const characters = "abcdefgh7410852963ijklmnopqrstuv~!@#$%^&*_+\":;'wxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let str = ""
+            while (length--) {
+                let r = Math.floor(Math.random() * characters.length);
+                str += characters[r];
+            }
+            return str;
+        }
+        const box = document.querySelector(".box")
+        box.innerHTML = randomString(k)
+        box.addEventListener("mousemove", (e) => {
+            box.innerHTML = randomString(k)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slate Wings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+<body data-bs-theme="light">
+    <div class="container pt-3">
+        <form id="printingForm" novalidate class="border p-3 rounded">
+            <div class="mt-1">
+                <label for="weightInput" class="form-label">Weight</label>
+                <div class="input-group">
+                    <input class="form-control" type="number" id="weightInput" name="weight"
+                        placeholder="Weight In Grams" step="0.01" min="0" required>
+                    <span class="input-group-text">Grams</span>
+                </div>
+                <div class="invalid-feedback">
+                    Enter a valid weight with up to 2 decimal places.
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <label for="printingTimeInput" class="form-label">Printing Time</label>
+                <div class="input-group">
+                    <input class="form-control" type="number" id="printingTimeInput" name="printingTime"
+                        placeholder="Printing Time In Hours" step="0.01" min="0" required>
+                    <span class="input-group-text">Hours</span>
+                </div>
+                <div class="invalid-feedback">
+                    Enter a valid printing time with up to 2 decimal places.
+                </div>
+            </div>
+
+
+            <div class="mt-3">
+                <label for="totalItemsInput" class="form-label">Total Items</label>
+                <input class="form-control" type="number" id="totalItemsInput" name="totalItems"
+                    placeholder="Total Items" value="1" step="1" min="1" required>
+                <div class="invalid-feedback">
+                    Enter a whole number greater than or equal to 1.
+                </div>
+            </div>
+        </form>
+
+        <div class="border rounded mt-3 mb-5 p-3">
+            <div class="row">
+                <p class="col-6 fw-semibold">Print Time</p>
+                <p class="col-6 fw-bold text-info" id="printTime">0</h2>
+            </div>
+            <div class="row border-bottom mb-2">
+                <p class="col-6 fw-semibold">Total Filament Used</p>
+                <p class="col-6 fw-bold text-info" id="totalFilamentUsed">0</h2>
+            </div>
+            <div class="row">
+                <p class="col-6 fw-semibold">Cost</p>
+                <p class="col-6 fw-bold text-info" id="cost">0</h2>
+            </div>
+            <div class="row">
+                <p class="col-6 fw-semibold">Price</p>
+                <p class="col-6 fw-bold text-primary" id="price">0</h2>
+            </div>
+            <div class="row border-bottom mb-2">
+                <p class="col-6 fw-semibold">Total Gained Profit</p>
+                <p class="col-6 fw-bold text-success" id="totalGainedProfit">0</h2>
+            </div>
+            <div class="row">
+                <p class="col-6 fw-semibold">Per Item Cost</p>
+                <p class="col-6 fw-bold text-info" id="perItemCost">0</h2>
+            </div>
+            <div class="row">
+                <p class="col-6 fw-semibold">Per Item Profit</p>
+                <p class="col-6 fw-bold text-info" id="perItemProfit">0</h2>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <script>
+
+        function getPrice(gram, time, items = 1) {
+            const cost = (gram * 0.65) + (time * 6.63);
+            const price = cost * 2.25;
+
+            const perItem = {
+                perItemCost: cost / items,
+                perItemPrice: price / items,
+            };
+
+            return {
+                gram: `${gram} grams`,
+                time: `${time} Hours`,
+                cost,
+                price,
+                totalGainedProfit: price - cost,
+                ...(items > 1 ? perItem : {})
+            };
+        }
+
+        const form = document.getElementById('printingForm');
+
+        const weightInput = document.getElementById('weightInput');
+        const printingTimeInput = document.getElementById('printingTimeInput');
+        const totalItemsInput = document.getElementById('totalItemsInput');
+
+        // Output elements
+        const printTimeOutput = document.getElementById('printTime');
+        const totalFilamentUsedOutput = document.getElementById('totalFilamentUsed');
+        const costOutput = document.getElementById('cost');
+        const priceOutput = document.getElementById('price');
+        const totalGainedProfitOutput = document.getElementById('totalGainedProfit');
+
+        const perItemCostOutput = document.getElementById('perItemCost');
+        const perItemProfitOutput = document.getElementById('perItemProfit');
+
+        // Format numbers to 3 decimal places maximum
+        function formatNumber(value) {
+            return Number(value.toFixed(3)).toString();
+        }
+
+        // Automatically remove extra decimals after 3 digits
+        const decimalInputs = [
+            weightInput,
+            printingTimeInput
+        ];
+
+        decimalInputs.forEach(input => {
+            input.addEventListener('input', function () {
+                const value = this.value;
+
+                if (value.includes('.')) {
+                    const parts = value.split('.');
+
+                    if (parts[1].length > 3) {
+                        this.value = parts[0] + '.' + parts[1].slice(0, 3);
+                    }
+                }
+
+                updatePrice();
+            });
+        });
+
+        // Allow whole numbers only in Total Items
+        totalItemsInput.addEventListener('input', function () {
+            this.value = this.value.replace(/\D/g, '');
+            updatePrice();
+        });
+
+        // Read values and calculate the price
+        function updatePrice() {
+            const gram = parseFloat(weightInput.value) || 0;
+            const time = parseFloat(printingTimeInput.value) || 0;
+            const items = parseInt(totalItemsInput.value, 10) || 0;
+
+            // Avoid division by zero
+            const result = getPrice(gram, time, items || 1);
+
+            // Update output elements
+            if (printTimeOutput) {
+                printTimeOutput.textContent = result.time;
+            }
+
+            if (totalFilamentUsedOutput) {
+                totalFilamentUsedOutput.textContent = result.gram;
+            }
+
+            if (costOutput) {
+                costOutput.textContent = formatNumber(result.cost);
+            }
+
+            if (priceOutput) {
+                priceOutput.textContent = formatNumber(result.price);
+            }
+
+            if (totalGainedProfitOutput) {
+                totalGainedProfitOutput.textContent =
+                    formatNumber(result.totalGainedProfit);
+            }
+
+            // Display per-item values when items >= 2
+            if (perItemCostOutput) {
+                perItemCostOutput.textContent =
+                    items > 1 ? formatNumber(result.perItemCost) : '—';
+            }
+
+            if (perItemProfitOutput) {
+                perItemProfitOutput.textContent =
+                    items > 1 ? formatNumber(result.perItemPrice) : '—';
+            }
+        }
+
+        // Calculate immediately when the page loads
+        updatePrice();
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
